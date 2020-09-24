@@ -8,6 +8,10 @@ Pequeña API para consultar información relativas a mangas tales como autores, 
 
 - Lenguaje: Typescript
 
+## Documentación
+
+- [GH Pages](https://antoniogamiz.github.io/manga-api/)
+
 ### Enlaces de interés
 
  - [Justificación](/docs/herramientas.md) de las herramientas usadas.
