@@ -6,7 +6,12 @@ Pequeña API para consultar información relativas a mangas tales como autores, 
 
 ## Herramientas
 
-- Como lenguaje de programación se ha elegido *Typescript*, ya que este lenguaje tiene muy buen soporte para operaciones asíncronas, tiene un ecosistema enorme y se puede hacer scraping de forma cómoda.
+- Lenguaje: Typescript
+
+### Enlaces de interés
+
+ - [Justificación](/docs/herramientas.md) de las herramientas usadas.
+ - [Comprobación](/docs/git.md) de `git` configurado correctamente.
 
 ## Autor
 
