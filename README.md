@@ -10,7 +10,10 @@ Pequeña API para consultar información relativas a mangas tales como autores, 
 
 ## Documentación
 
+
 - [GH Pages](https://antoniogamiz.github.io/manga-api/)
+
+La documentación sigue el estándar [tsdoc](https://github.com/microsoft/tsdoc) y es generada usando [typedoc](https://github.com/TypeStrong/typedoc).
 
 ### Enlaces de interés
 
