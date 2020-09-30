@@ -6,7 +6,7 @@ Pequeña API para consultar información relativas a mangas tales como autores, 
 
 ## Herramientas
 
-- Lenguaje: [Go](https://golang.org/)
+- Lenguaje: Typescript
 
 ## Documentación
 
