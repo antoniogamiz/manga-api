@@ -1,3 +1,6 @@
+# coverage report
+*.xml
+
 # Logs
 logs
 *.log

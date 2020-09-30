@@ -4,6 +4,18 @@
 
 Pequeña API para consultar información relativas a mangas tales como autores, género, capítulos y obtener enlaces a las correspondientes imágenes de cada capítulo. Este API pretende ser usada por aplicaciones móviles o páginas web para *leer* manga, como [manganelo](https://manganelo.com/).
 
+Para correr la aplicación:
+
+    npm start
+
+Para correr los tests:
+
+    npm test
+
+Para correr los tests y generar un reporte (`junit-TEST.xml`) entendible por las herramientas de CI:
+
+    npm run test:ci
+
 ## Herramientas
 
 - Lenguaje: Typescript
