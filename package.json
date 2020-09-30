@@ -9,7 +9,8 @@
   "scripts": {
     "start": "tsc && babel src --out-dir dist --extensions .ts && node dist/app.js",
     "test": "jest --runInBand --detectOpenHandles --colors --verbose --reporters=default",
-    "test:ci": "jest --ci --runInBand --silent --colors --coverage"
+    "test:ci": "jest --ci --runInBand --silent --colors --coverage",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/app.ts"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,7 @@
     "@types/node": "^14.11.2",
     "jest": "^26.4.2",
     "jest-junit": "^11.1.0",
+    "nodemon": "^2.0.4",
     "ts-jest": "^26.4.1",
     "typescript": "^4.0.3"
   }
