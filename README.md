@@ -15,6 +15,8 @@ Pequeña API para consultar información relativas a mangas tales como autores, 
 
 La documentación sigue el estándar [tsdoc](https://github.com/microsoft/tsdoc) y es generada usando [typedoc](https://github.com/TypeStrong/typedoc).
 
+- Una primera aproximación a las historias de usuario de este proyecto puede ser consultada [aquí](/docs/HU.md).
+
 ### Enlaces de interés
 
  - [Justificación](/docs/herramientas.md) de las herramientas usadas.
