@@ -3,6 +3,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 ![Documentation](https://github.com/antoniogamiz/manga-api/workflows/Documentation/badge.svg)
 ![Node.js CI](https://github.com/antoniogamiz/manga-api/workflows/Node.js%20CI/badge.svg)
+[![codecov](https://codecov.io/gh/antoniogamiz/manga-api/branch/master/graph/badge.svg?token=GG1927Y4EW)](undefined)
 
 ## Descripción
 
