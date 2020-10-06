@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import express, { Response, Request } from "express";
 import * as bodyParser from "body-parser";
-import mangaRouter from "./routes/manga";
+import { mangaRouter } from "./routes/manga";
 
 dotenv.config();
 

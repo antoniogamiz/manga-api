@@ -6,4 +6,4 @@ router.get("/", (req: Request, res: Response) => {
   return res.send({ titles: [] });
 });
 
-export default router;
+export { router as mangaRouter };
