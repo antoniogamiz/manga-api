@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { runInNewContext } from "vm";
 import { Manga } from "../types";
 
 interface MangaDocument extends mongoose.Document, Manga {}
@@ -11,6 +12,8 @@ const mangaSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
+    unique: true,
+    dropDups: true,
   },
   alternativeTitles: {
     type: [String],
