@@ -16,7 +16,17 @@ app.get("/health", (req: Request, res: Response) =>
   res.send({ uptime: process.uptime(), message: "OK", timestamp: Date.now() })
 );
 
-console.log(process.env.DB_URL);
+// error logger
+app.use((err: Error, req: Request, res: Response, next: Function) => {
+  console.log(err.stack);
+  next(err, req, res);
+});
+
+// error handler
+app.use((err: Error, req: Request, res: Response, next: Function) => {
+  res.json({ code: err.name, message: err.message });
+});
+
 mongoose.connect(
   process.env.DB_URL || "",
   {

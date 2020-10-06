@@ -6,7 +6,7 @@ router.get("/", (req: Request, res: Response) => {
   return res.send({ titles: [] });
 });
 
-router.post("/", async (req: Request, res: Response) => {
+router.post("/", async (req: Request, res: Response, next: Function) => {
   const {
     title,
     alternativeTitles,
@@ -24,9 +24,13 @@ router.post("/", async (req: Request, res: Response) => {
     chapters,
     chaptersEntries,
   });
-
-  await manga.save();
-  return res.status(201).send(manga);
+  try {
+    await manga.save();
+    return res.status(201).send(manga);
+  } catch (error) {
+    res.status(400);
+    next(error);
+  }
 });
 
 export { router as mangaRouter };
