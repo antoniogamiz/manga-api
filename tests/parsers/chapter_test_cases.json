@@ -2,6 +2,18 @@
     "mangas": [
         {
             "url": "https://manganelo.com/manga/read_one_piece_manga_online_free4",
+            "title": "One Piece",
+            "alternativeTitles": [
+                "ワンピース (Japanese)",
+                "海盗路飞",
+                "海贼王",
+                "航海王 (Chinese)",
+                "원피스 (Korean)",
+                "ون بيس",
+                "وان پیس (Arabic)",
+                "Đảo Hải Tặc (Vietnamese - Tiếng Việt - TV)",
+                "วันพีซ (Thai)"
+            ],
             "status": "Ongoing",
             "genres": [
                 "Action",

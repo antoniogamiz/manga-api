@@ -7,6 +7,20 @@ import test_case from "./chapter_test_cases.json";
 describe.only("Parse manga metadata", () => {
   const parser = new ManganeloParser();
 
+  test("Parse title", async () => {
+    const html: string = await fetchData(test_case.mangas[0].url);
+    const title: string = parser.parseTitle(html);
+    expect(title).toStrictEqual(test_case.mangas[0].title);
+  });
+
+  test("Parse alternative titles", async () => {
+    const html: string = await fetchData(test_case.mangas[0].url);
+    const alternativeTitle: string[] = parser.parseAlternativeTitles(html);
+    expect(alternativeTitle).toStrictEqual(
+      test_case.mangas[0].alternativeTitles
+    );
+  });
+
   test("Parse status", async () => {
     const html: string = await fetchData(test_case.mangas[0].url);
     const status: Status = parser.parseStatus(html);

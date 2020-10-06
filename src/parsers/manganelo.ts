@@ -17,17 +17,26 @@ export default class ManganeloParser implements MangaParser {
     return {
       title: "",
       alternativeTitles: [],
-      status: Status.COMPLETED,
+      status: Status.Completed,
       genres: [],
       chapters: [],
       chaptersEntries: [],
     };
   }
   parseTitle(html: string): string {
-    return "";
+    const $ = cheerio.load(html);
+    const title = $("h1").text();
+    return title;
   }
   parseAlternativeTitles(html: string): string[] {
-    return [];
+    const $ = cheerio.load(html);
+    const alternativeTitles = $(
+      ".variations-tableInfo tbody tr:nth-child(1) td:nth-child(2) h2"
+    )
+      .text()
+      .split(";")
+      .map((e) => e.trim());
+    return alternativeTitles;
   }
   parseStatus(html: string): Status {
     const $ = cheerio.load(html);
