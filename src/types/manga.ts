@@ -14,7 +14,7 @@ export interface Chapter {
 }
 
 /**
- * Chapter entry found in a manga page but have not been parsed.
+ * Chapter entry found in a manga page but have not been parsed yet.
  * You need to fetch the html and call 'parseChapter'.
  */
 export interface ChapterEntry {
