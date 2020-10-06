@@ -1,10 +1,16 @@
 import fetchData from "../../src/utils/http";
 import ManganeloParser from "../../src/parsers/manganelo";
-import { Status, Genre, Chapter, ChapterEntry } from "../../src/types/manga";
+import {
+  Manga,
+  Status,
+  Genre,
+  Chapter,
+  ChapterEntry,
+} from "../../src/types/manga";
 
 import test_case from "./chapter_test_cases.json";
 
-describe.only("Parse manga metadata", () => {
+describe("Parse manga metadata", () => {
   const parser = new ManganeloParser();
 
   test("Parse title", async () => {
@@ -15,8 +21,8 @@ describe.only("Parse manga metadata", () => {
 
   test("Parse alternative titles", async () => {
     const html: string = await fetchData(test_case.mangas[0].url);
-    const alternativeTitle: string[] = parser.parseAlternativeTitles(html);
-    expect(alternativeTitle).toStrictEqual(
+    const alternativeTitles: string[] = parser.parseAlternativeTitles(html);
+    expect(alternativeTitles).toStrictEqual(
       test_case.mangas[0].alternativeTitles
     );
   });
@@ -31,6 +37,17 @@ describe.only("Parse manga metadata", () => {
     const html: string = await fetchData(test_case.mangas[0].url);
     const genres: Genre[] = parser.parseGenres(html);
     expect(genres).toStrictEqual(test_case.mangas[0].genres);
+  });
+
+  test("Parse manga metadata", async () => {
+    const html: string = await fetchData(test_case.mangas[0].url);
+    const manga: Manga = parser.parse(html);
+    expect(manga.title).toBe(test_case.mangas[0].title);
+    expect(manga.alternativeTitles).toStrictEqual(
+      test_case.mangas[0].alternativeTitles
+    );
+    expect(manga.status).toBe(test_case.mangas[0].status);
+    expect(manga.genres).toStrictEqual(test_case.mangas[0].genres);
   });
 });
 

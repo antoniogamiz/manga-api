@@ -15,12 +15,12 @@ import {
 export default class ManganeloParser implements MangaParser {
   parse(html: string): Manga {
     return {
-      title: "",
-      alternativeTitles: [],
-      status: Status.Completed,
-      genres: [],
+      title: this.parseTitle(html),
+      alternativeTitles: this.parseAlternativeTitles(html),
+      status: this.parseStatus(html),
+      genres: this.parseGenres(html),
       chapters: [],
-      chaptersEntries: [],
+      chaptersEntries: this.parseChapters(html),
     };
   }
   parseTitle(html: string): string {
