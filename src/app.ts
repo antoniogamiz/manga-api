@@ -1,15 +1,13 @@
 import dotenv from "dotenv";
 import express, { Response, Request } from "express";
-import * as bodyParser from "body-parser";
 import { mangaRouter } from "./routes/manga";
 import mongoose from "mongoose";
-import { exit } from "process";
 
 dotenv.config();
 
 const app = express();
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.json());
+
 const port = process.env.SERVER_PORT;
 
 app.use("/manga", mangaRouter);
