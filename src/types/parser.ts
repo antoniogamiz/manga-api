@@ -1,4 +1,4 @@
-import { Manga, Status, Genre, Chapter } from "./manga";
+import { Manga, Status, Genre, Chapter, ChapterEntry } from "./manga";
 
 export interface MangaParser {
   parse: (html: string) => Manga;
@@ -6,6 +6,6 @@ export interface MangaParser {
   parseAlternativeTitles: (html: string) => string[];
   parseStatus: (html: string) => Status;
   parseGenres: (html: string) => Genre[];
-  parseChapters: (html: string) => Chapter[];
+  parseChapters: (html: string) => ChapterEntry[];
   parseChapter: (html: string) => Chapter;
 }

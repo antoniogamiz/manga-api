@@ -5,11 +5,20 @@ export interface Manga {
   status: Status;
   genres: Genre[];
   chapters: Chapter[];
+  chaptersEntries: ChapterEntry[];
 }
 
 export interface Chapter {
   title: string;
   chapterPages: ChapterPage[];
+}
+
+/**
+ * Chapter entry found in a manga page but have not been parsed.
+ * You need to fetch the html and call 'parseChapter'.
+ */
+export interface ChapterEntry {
+  url: string;
 }
 
 export interface ChapterPage {

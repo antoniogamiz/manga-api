@@ -1,6 +1,13 @@
 import cheerio from "cheerio";
 
-import { MangaParser, Manga, Genre, Status, Chapter } from "../types";
+import {
+  MangaParser,
+  Manga,
+  Genre,
+  Status,
+  Chapter,
+  ChapterEntry,
+} from "../types";
 
 /**
  * Parse for the [Manganelo](https://manganelo.com/) manga site.
@@ -13,6 +20,7 @@ export default class ManganeloParser implements MangaParser {
       status: Status.COMPLETED,
       genres: [],
       chapters: [],
+      chaptersEntries: [],
     };
   }
   parseTitle(html: string): string {
@@ -27,9 +35,15 @@ export default class ManganeloParser implements MangaParser {
   parseGenres(html: string): Genre[] {
     return [];
   }
-  parseChapters(html: string): Chapter[] {
-    return [];
+
+  parseChapters(html: string): ChapterEntry[] {
+    const $ = cheerio.load(html);
+    const chapters = $(".row-content-chapter .a-h .chapter-name")
+      .map((i, e) => ({ url: $(e).attr("href") }))
+      .get();
+    return chapters;
   }
+
   parseChapter(html: string): Chapter {
     const $ = cheerio.load(html);
     const chapters = $(".container-chapter-reader")
