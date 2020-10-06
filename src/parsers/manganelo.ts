@@ -30,7 +30,11 @@ export default class ManganeloParser implements MangaParser {
     return [];
   }
   parseStatus(html: string): Status {
-    return Status.COMPLETED;
+    const $ = cheerio.load(html);
+    const status = $(
+      ".variations-tableInfo tbody tr:nth-child(3) td:nth-child(2)"
+    ).text();
+    return (<any>Status)[status];
   }
 
   parseGenres(html: string): Genre[] {

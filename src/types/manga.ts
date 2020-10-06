@@ -33,11 +33,11 @@ export enum Status {
   /**
    * New chapters are being released
    */
-  ONGOING,
+  Ongoing = "Ongoing",
   /**
    * Manga is completed
    */
-  COMPLETED,
+  Completed = "Completed",
 }
 
 /**

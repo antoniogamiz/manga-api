@@ -1,11 +1,17 @@
 import fetchData from "../../src/utils/http";
 import ManganeloParser from "../../src/parsers/manganelo";
-import { Genre, Chapter, ChapterEntry } from "../../src/types/manga";
+import { Status, Genre, Chapter, ChapterEntry } from "../../src/types/manga";
 
 import test_case from "./chapter_test_cases.json";
 
 describe.only("Parse manga metadata", () => {
   const parser = new ManganeloParser();
+
+  test("Parse status", async () => {
+    const html: string = await fetchData(test_case.mangas[0].url);
+    const status: Status = parser.parseStatus(html);
+    expect(status).toBe(test_case.mangas[0].status);
+  });
 
   test("Parse genres", async () => {
     const html: string = await fetchData(test_case.mangas[0].url);
