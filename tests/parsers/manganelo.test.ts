@@ -1,8 +1,18 @@
 import fetchData from "../../src/utils/http";
 import ManganeloParser from "../../src/parsers/manganelo";
-import { Chapter, ChapterEntry } from "../../src/types/manga";
+import { Genre, Chapter, ChapterEntry } from "../../src/types/manga";
 
 import test_case from "./chapter_test_cases.json";
+
+describe.only("Parse manga metadata", () => {
+  const parser = new ManganeloParser();
+
+  test("Parse genres", async () => {
+    const html: string = await fetchData(test_case.mangas[0].url);
+    const genres: Genre[] = parser.parseGenres(html);
+    expect(genres).toStrictEqual(test_case.mangas[0].genres);
+  });
+});
 
 describe("Parse Chapters", () => {
   const parser = new ManganeloParser();

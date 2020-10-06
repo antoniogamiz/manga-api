@@ -32,8 +32,15 @@ export default class ManganeloParser implements MangaParser {
   parseStatus(html: string): Status {
     return Status.COMPLETED;
   }
+
   parseGenres(html: string): Genre[] {
-    return [];
+    const $ = cheerio.load(html);
+    const genres = $(
+      ".variations-tableInfo tbody tr:nth-child(4) td:nth-child(2) a"
+    )
+      .map((i, e) => $(e).text())
+      .get();
+    return genres.map((g: Genre) => (<any>Genre)[g]);
   }
 
   parseChapters(html: string): ChapterEntry[] {

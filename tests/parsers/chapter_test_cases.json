@@ -2,6 +2,14 @@
     "mangas": [
         {
             "url": "https://manganelo.com/manga/read_one_piece_manga_online_free4",
+            "genres": [
+                "Action",
+                "Adventure",
+                "Comedy",
+                "Drama",
+                "Fantasy",
+                "Shounen"
+            ],
             "chapter_entries": [
                 {
                     "url": "https://manganelo.com/chapter/read_one_piece_manga_online_free4/chapter_990"
