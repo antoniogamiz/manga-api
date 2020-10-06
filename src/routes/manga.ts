@@ -2,8 +2,15 @@ import { Router, Request, Response } from "express";
 import { MangaModel } from "../models";
 const router = Router();
 
-router.get("/", (req: Request, res: Response) => {
-  return res.send({ titles: [] });
+router.get("/", async (req: Request, res: Response, next: Function) => {
+  try {
+    const mangas = await MangaModel.find({}, { title: 1, _id: 0 })
+      .limit(100)
+      .exec();
+    return res.json(mangas);
+  } catch (error) {
+    next(error);
+  }
 });
 
 router.post("/", async (req: Request, res: Response, next: Function) => {
