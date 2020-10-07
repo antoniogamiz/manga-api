@@ -2,7 +2,6 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 ![Documentation](https://github.com/antoniogamiz/manga-api/workflows/Documentation/badge.svg)
-![Node.js CI](https://github.com/antoniogamiz/manga-api/workflows/Node.js%20CI/badge.svg)
 
 ## Descripción
 
