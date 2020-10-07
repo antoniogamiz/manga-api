@@ -10,8 +10,8 @@ jobs:
           persist-credentials: false
       - name: Install and Build 🔧
         run: |
-          npm install
-          npm run doc
+          npm install -g typedoc
+          typedoc src
           touch docs-build/.nojekyll
 
       - name: Deploy 🚀
