@@ -1,6 +1,6 @@
-import axios from "axios";
+// import axios from "axios";
 
-const AxiosInstance = axios.create();
+// const AxiosInstance = axios.create();
 
 /**
  *
@@ -8,14 +8,15 @@ const AxiosInstance = axios.create();
  * @param retries Number of retries if the request fails
  * @returns The HTML string
  */
-const fetchPage = async (url: string, retries = 3): Promise<string | Error> => {
-  const response = await AxiosInstance.get(url);
-  if (response.status === 200) return response.data;
-  if (!retries)
-    return new Error(
-      `HTTP Error: code: ${response.status} ${response.statusText}`
-    );
-  return fetchPage(url, retries - 1);
-};
+const fetchPage = async (url: string, retries = 3): Promise<void> => {};
+// const fetchPage = async (url: string, retries = 3): Promise<string | Error> => {
+//   const response = await AxiosInstance.get(url);
+//   if (response.status === 200) return response.data;
+//   if (!retries)
+//     return new Error(
+//       `HTTP Error: code: ${response.status} ${response.statusText}`
+//     );
+//   return fetchPage(url, retries - 1);
+// };
 
 export default fetchPage;
