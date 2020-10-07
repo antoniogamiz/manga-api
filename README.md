@@ -10,19 +10,12 @@ Pequeña API para consultar información relativas a mangas tales como autores, 
 
 Para correr la aplicación:
 
-    npm start
-
-Para correr los tests:
-
-    npm test
-
-Para correr los tests y generar un reporte (`junit-TEST.xml`) entendible por las herramientas de CI:
-
-    npm run test:ci
+    deno run src/app.ts
 
 ## Herramientas
 
-- Lenguaje: Typescript
+- Lenguaje: [Typescript](https://www.typescriptlang.org/)
+- Runtime: [Deno](https://deno.land/)
 
 ## Documentación
 

@@ -9,3 +9,5 @@ el estándar open source de Microsoft para Typescript. Esto tiene varias ventaja
 - Al ser un estándar oficial, se integra perfectamente con [Typedoc](https://github.com/TypeStrong/typedoc), que es la utilidad que voy a usar para generar una versión web de la documentación.
 
 En este [artículo](https://blog.cloudflare.com/generating-documentation-for-typescript-projects/), Cloudfare explica de forma bastante clara por el que evitar usar JSDoc si ya usas Typescript.
+
+- Uso [deno](https://deno.land/) como runtime porque tiene soporte **nativo** para Typescript. Sólo por esa característica ya lo hace una alternativa superior a Node donde necesitas unos cuantos paquetes para simplemente ejecutar tu código.
