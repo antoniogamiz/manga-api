@@ -11,6 +11,7 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm install typescript
+          echo '{"compilerOptions": {"lib": [ "es2015" ]}}' > tsconfig.json
           npm install typedoc
           ./node_modules/typedoc/bin/typedoc --out docs-build src
           touch docs-build/.nojekyll
