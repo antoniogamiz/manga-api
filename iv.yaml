@@ -1,1 +1,4 @@
-entidad: src/parsers/manganelo.ts
+entidad:
+  - src/parsers/manganelo.ts
+  - src/types/manga.ts
+  - src/types/parser.ts
