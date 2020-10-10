@@ -7,7 +7,7 @@
 const fetchPage = async (url: string, retries = 3): Promise<string> => {
   try {
     const response = await fetch(url);
-    return response.text();
+    return await response.text();
   } catch (error) {
     if (!retries) {
       throw new Error(`HTTP Error: ${error.message}`);
