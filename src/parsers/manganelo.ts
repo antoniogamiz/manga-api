@@ -1,4 +1,4 @@
-import { MangaParser, Manga, Genre, Status, Chapter } from "../types/index.ts";
+import { Chapter, Genre, Manga, MangaParser, Status } from "../types/index.ts";
 
 /**
  * Parse for the [Manganelo](https://manganelo.com/) manga site.
