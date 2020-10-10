@@ -1,2 +1,2 @@
-export * from "./manga";
-export * from "./parser";
+export * from "./manga.ts";
+export * from "./parser.ts";

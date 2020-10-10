@@ -1,4 +1,4 @@
-import { Manga, Status, Genre, Chapter } from "./manga";
+import { Manga, Status, Genre, Chapter } from "./manga.ts";
 
 export interface MangaParser {
   parse: (html: string) => Manga;
