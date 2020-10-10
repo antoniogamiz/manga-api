@@ -2,6 +2,7 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 ![Documentation](https://github.com/antoniogamiz/manga-api/workflows/Documentation/badge.svg)
+![Tests](https://github.com/antoniogamiz/manga-api/workflows/Tests/badge.svg)
 
 ## Descripción
 
@@ -10,6 +11,10 @@ Pequeña API para consultar información relativas a mangas tales como autores, 
 Para correr la aplicación:
 
     deno run src/app.ts
+
+Para ejecutar los tests:
+
+    deno test --allow-net
 
 ## Documentación
 
