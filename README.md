@@ -22,6 +22,7 @@ Para ejecutar los tests:
 - [GH Pages](https://antoniogamiz.github.io/manga-api/)
 - Lenguaje: [Typescript](https://www.typescriptlang.org/)
 - Runtime: [Deno](https://deno.land/)
+- [Plan de desarrollo](/docs/plan.md)
 - [iv.yaml](/iv.yaml)
 
 La documentación sigue el estándar [tsdoc](https://github.com/microsoft/tsdoc) y es generada usando [typedoc](https://github.com/TypeStrong/typedoc).
