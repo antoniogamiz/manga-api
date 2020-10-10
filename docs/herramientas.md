@@ -11,3 +11,5 @@ el estándar open source de Microsoft para Typescript. Esto tiene varias ventaja
 En este [artículo](https://blog.cloudflare.com/generating-documentation-for-typescript-projects/), Cloudfare explica de forma bastante clara por el que evitar usar JSDoc si ya usas Typescript.
 
 - Uso [deno](https://deno.land/) como runtime porque tiene soporte **nativo** para Typescript. Sólo por esa característica ya lo hace una alternativa superior a Node donde necesitas unos cuantos paquetes para simplemente ejecutar tu código.
+
+- Uso [jsdom](https://github.com/jsdom/jsdom) porque es la única alternativa a Cheerio que he encontrado para Deno (cheerio no funciona en node).
