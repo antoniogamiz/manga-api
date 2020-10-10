@@ -11,7 +11,7 @@ import {
 /**
  * Parse for the [Manganelo](https://manganelo.com/) manga site.
  */
-class ManganeloParser implements MangaParser {
+export class ManganeloParser implements MangaParser {
   parse(html: string): Manga {
     return {
       title: "",

@@ -11,11 +11,62 @@ import {
   // @ts-ignore;
 } from "../../src/types/index.ts";
 // @ts-ignore;
-import { assert } from "../../src/deps.ts";
+import { assertEquals, assertStrictEquals } from "../../src/deps.ts";
 
 import spec from "./manganelo-spec.js";
 
-Deno.test("Basic fetch try", async () => {
-  const html = await fetchPage("https://google.com");
-  assert(html);
+const parser: ManganeloParser = new ManganeloParser();
+
+Deno.test("Parse title", async () => {
+  const html: string = await fetchPage(spec.mangas[0].url);
+  const title: string = parser.parseTitle(html);
+  assertEquals(title, spec.mangas[0].title);
+});
+
+Deno.test("Parse alternative titles", async () => {
+  const html: string = await fetchPage(spec.mangas[0].url);
+  const alternativeTitles: string[] = parser.parseAlternativeTitles(html);
+  assertStrictEquals(alternativeTitles, spec.mangas[0].alternativeTitles);
+});
+
+Deno.test("Parse status", async () => {
+  const html: string = await fetchPage(spec.mangas[0].url);
+  const status: Status = parser.parseStatus(html);
+  assertEquals(status, spec.mangas[0].status);
+});
+
+Deno.test("Parse genres", async () => {
+  const html: string = await fetchPage(spec.mangas[0].url);
+  const genres: Genre[] = parser.parseGenres(html);
+  assertStrictEquals(genres, spec.mangas[0].genres);
+});
+
+Deno.test("Parse manga metadata", async () => {
+  const html: string = await fetchPage(spec.mangas[0].url);
+  const manga: Manga = parser.parse(html);
+  assertEquals(manga.title, spec.mangas[0].title);
+  assertStrictEquals(manga.alternativeTitles, spec.mangas[0].alternativeTitles);
+  assertEquals(manga.status, spec.mangas[0].status);
+  assertStrictEquals(manga.genres, spec.mangas[0].genres);
+});
+
+Deno.test("Get all chapters", async () => {
+  const html: string = await fetchPage(spec.mangas[0].url);
+  const chapters: ChapterEntry[] = parser.parseChapters(html);
+  assertStrictEquals(chapters, spec.mangas[0].chapter_entries);
+});
+
+Deno.test("Get chapter title", async () => {
+  const html: string = await fetchPage(spec.mangas[0].chapters[0].url);
+  const chapter: Chapter = parser.parseChapter(html);
+  assertEquals(chapter.title, spec.mangas[0].chapters[0].title);
+});
+
+Deno.test("Get chapter pages", async () => {
+  const html: string = await fetchPage(spec.mangas[0].chapters[0].url);
+  const chapter: Chapter = parser.parseChapter(html);
+  assertStrictEquals(
+    chapter.chapterPages,
+    spec.mangas[0].chapters[0].chapterPages,
+  );
 });
