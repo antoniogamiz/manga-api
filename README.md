@@ -24,6 +24,10 @@ Para ejecutar los tests:
 - Runtime: [Deno](https://deno.land/)
 - [Plan de desarrollo](/docs/plan.md)
 - [iv.yaml](/iv.yaml)
+- Principales tipos:
+    - [Relacionados con manga](/src/types/manga.ts)
+    - [Relacionados con parsers](/src/types/parser.ts)
+
 
 La documentación sigue el estándar [tsdoc](https://github.com/microsoft/tsdoc) y es generada usando [typedoc](https://github.com/TypeStrong/typedoc).
 
