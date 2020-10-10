@@ -4,7 +4,7 @@
  * @param retries Number of retries if the request fails
  * @returns The HTML string
  */
-const fetchPage = async (url: string, retries = 3): Promise<string | Error> => {
+const fetchPage = async (url: string, retries = 3): Promise<string> => {
   try {
     const response = await fetch(url);
     return response.text();

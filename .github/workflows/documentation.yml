@@ -8,12 +8,13 @@ jobs:
         uses: actions/checkout@v2.3.1
         with:
           persist-credentials: false
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: "12"
       - name: Install and Build 🔧
         run: |
-          npm install typescript
-          echo '{"compilerOptions": {"lib": [ "es2015" ]}}' > tsconfig.json
-          npm install typedoc
-          ./node_modules/typedoc/bin/typedoc --out docs-build src
+          npm install -g typescript typedoc typescript-deno-plugin
+          typedoc src/
           touch docs-build/.nojekyll
 
       - name: Deploy 🚀

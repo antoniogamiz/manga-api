@@ -1,3 +1,4 @@
+// @ts-ignore
 import { Chapter, Genre, Manga, MangaParser, Status } from "../types/index.ts";
 
 /**
