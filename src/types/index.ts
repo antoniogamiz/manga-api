@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-ignore deno-lint-ignore
 export * from "./manga.ts";
-// @ts-ignore
+// @ts-ignore deno-lint-ignore
 export * from "./parser.ts";

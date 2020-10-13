@@ -1,6 +1,6 @@
-// @ts-ignore
+// @ts-ignore deno-lint-ignore
 import { ManganeloParser } from "../../src/parsers/index.ts";
-// @ts-ignore
+// @ts-ignore deno-lint-ignore
 import fetchPage from "../../src/utils/http.ts";
 import {
   Chapter,
@@ -8,9 +8,9 @@ import {
   Genre,
   Manga,
   Status,
-  // @ts-ignore;
+  // @ts-ignore deno-lint-ignore
 } from "../../src/types/index.ts";
-// @ts-ignore;
+// @ts-ignore deno-lint-ignore
 import { assertEquals } from "../../src/deps.ts";
 
 import spec from "./manganelo-spec.js";

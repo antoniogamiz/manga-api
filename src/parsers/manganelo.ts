@@ -5,10 +5,10 @@ import {
   Manga,
   MangaParser,
   Status,
-  // @ts-ignore
+  // @ts-ignore deno-lint-ignore
 } from "../types/index.ts";
 
-// @ts-ignore
+// @ts-ignore deno-lint-ignore
 import { cheerio } from "../deps.ts";
 
 /**
@@ -37,7 +37,7 @@ export class ManganeloParser implements MangaParser {
     )
       .text()
       .split(";")
-      .map((e: any) => e.trim());
+      .map((e: string) => e.trim());
     return alternativeTitles;
   }
   parseStatus(html: string): Status {
@@ -45,7 +45,7 @@ export class ManganeloParser implements MangaParser {
     const status = $(
       ".variations-tableInfo tbody tr:nth-child(3) td:nth-child(2)",
     ).text();
-    return (<any> Status)[status];
+    return  Status[status as unknown as keyof typeof Status];
   }
 
   parseGenres(html: string): Genre[] {
@@ -53,15 +53,15 @@ export class ManganeloParser implements MangaParser {
     const genres = $(
       ".variations-tableInfo tbody tr:nth-child(4) td:nth-child(2) a",
     )
-      .map((i: any, e: any) => $(e).text())
+      .map((i: number, e: CheerioElement) => $(e).text())
       .get();
-    return genres.map((g: Genre) => (<any> Genre)[g]);
+    return genres.map((g: Genre) => Genre[g as unknown as keyof typeof Genre]);
   }
 
   parseChapters(html: string): ChapterEntry[] {
     const $ = cheerio.load(html);
     const chapters = $(".row-content-chapter .a-h .chapter-name")
-      .map((i: any, e: any) => ({ url: $(e).attr("href") }))
+      .map((i: number, e: CheerioElement) => ({ url: $(e).attr("href") }))
       .get();
     return chapters;
   }
@@ -70,7 +70,7 @@ export class ManganeloParser implements MangaParser {
     const $ = cheerio.load(html);
     const chapters = $(".container-chapter-reader")
       .contents()
-      .map((i: any, e: any) => $(e).attr("src"))
+      .map((i: number, e: cheerio) => $(e).attr("src"))
       .get();
     return {
       title: $("h1").text(),
