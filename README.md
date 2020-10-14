@@ -6,7 +6,9 @@
 
 ## Descripción
 
-Pequeña API para consultar información relativas a mangas tales como autores, género, capítulos y obtener enlaces a las correspondientes imágenes de cada capítulo. Este API pretende ser usada por aplicaciones móviles o páginas web para *leer* manga, como [manganelo](https://manganelo.com/).
+Pequeña API para consultar información relativas a mangas tales como autores, género, capítulos y obtener enlaces a las correspondientes imágenes de cada capítulo. Este API pretende ser usada por aplicaciones móviles o páginas web para *leer* manga.
+
+Para obtener la información de cada manga, dependemos de páginas externas como [manganelo](https://manganelo.com/). Cada página debe tener una implementación del [parser](https://github.com/antoniogamiz/manga-api/blob/master/src/types/parser.ts) asociada. Por ahora, solo el [parser de Manganelo](https://github.com/antoniogamiz/manga-api/blob/master/src/parsers/manganelo.ts) es completamente funcional. Los diferentes parsers son usados por la API cuando una nueva petición llega.
 
 Para correr la aplicación:
 
@@ -42,6 +44,8 @@ Nota: necesitas tener instalado [velociraptor](https://github.com/umbopepato/vel
 
 
 La documentación sigue el estándar [tsdoc](https://github.com/microsoft/tsdoc) y es generada usando [typedoc](https://github.com/TypeStrong/typedoc).
+
+*NOTA*: Actualmente está rota porque TypeDoc tiene bastantes problemas con la forma de importar tipos de Deno. Estoy intentando solucionarlo o buscar una alternativa (hay pocas tirando a ninguna).
 
 ### Historias de usuario:
 
