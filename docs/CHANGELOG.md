@@ -11,8 +11,11 @@
 - Add a github action to run the tests [\#32](https://github.com/antoniogamiz/manga-api/issues/32)
 - Implementar y testear el parser de Manganelo [\#31](https://github.com/antoniogamiz/manga-api/issues/31)
 - Justificación de Velociraptor como Task Runner [docs/herramientas.md](https://github.com/antoniogamiz/manga-api/blob/master/docs/herramientas.md)
+- Documentación de las clases [\#46](https://github.com/antoniogamiz/manga-api/issues/46)
 
 Soy consciente de que la publicación de la documentación automática está rota, estoy intentando arreglarla (ver [\#38](https://github.com/antoniogamiz/manga-api/issues/38)).
+
+La milestone correspondiente a este hito puede ser consultada [aquí](https://github.com/antoniogamiz/manga-api/milestone/4).
 
 ### Arreglos de hitos previos
 

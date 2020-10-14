@@ -1,13 +1,27 @@
+/**
+ * Manga representation.
+ */
 export interface Manga {
   title: string;
   /** Normally they are in different languages */
   alternativeTitles: string[];
   status: Status;
   genres: Genre[];
+  /**
+   * Already fetched and parsed chapters, they are empty after the
+   * first parsing call
+   */
   chapters: Chapter[];
+  /**
+   * Prefetched chapters. They are populated in the first call to parse.
+   * Not loading all chapters at once speeds up simple queries.
+   */
   chaptersEntries: ChapterEntry[];
 }
 
+/**
+ * We only care about the title and the URL of the image pages of the manga.
+ */
 export interface Chapter {
   title: string;
   chapterPages: ChapterPage[];
@@ -26,9 +40,7 @@ export interface ChapterPage {
   url: string;
 }
 
-/**
- * All possible status
- */
+/** If the manga is being published or has been finished */
 export enum Status {
   /**
    * New chapters are being released
