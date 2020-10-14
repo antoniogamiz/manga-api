@@ -8,13 +8,20 @@
 
 Pequeña API para consultar información relativas a mangas tales como autores, género, capítulos y obtener enlaces a las correspondientes imágenes de cada capítulo. Este API pretende ser usada por aplicaciones móviles o páginas web para *leer* manga, como [manganelo](https://manganelo.com/).
 
+
 Para correr la aplicación:
 
-    deno run src/app.ts
+    vr start
 
 Para ejecutar los tests:
 
-    deno test --allow-net
+    vr test
+
+Para ejecutar el linter:
+
+    vr lint
+
+Nota: necesitas tener instalado [velociraptor](https://github.com/umbopepato/velociraptor).
 
 ## Documentación
 

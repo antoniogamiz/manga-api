@@ -1,0 +1,13 @@
+allow:
+  - net
+
+scripts:
+  start:
+    desc: Run the app
+    cmd: deno run src/app.ts
+  test:
+    desc: Run the tests
+    cmd: deno test
+  lint:
+    desc: Linter
+    cmd: deno lint --unstable
