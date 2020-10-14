@@ -8,7 +8,6 @@
 
 Pequeña API para consultar información relativas a mangas tales como autores, género, capítulos y obtener enlaces a las correspondientes imágenes de cada capítulo. Este API pretende ser usada por aplicaciones móviles o páginas web para *leer* manga, como [manganelo](https://manganelo.com/).
 
-
 Para correr la aplicación:
 
     vr start
@@ -20,6 +19,12 @@ Para ejecutar los tests:
 Para ejecutar el linter:
 
     vr lint
+
+El módulo todavía no cuenta con un instalador, por lo que si quieres usar el proyecto tendrás que descargarte el repositorio con el siguiente comando:
+
+~~~
+git clone https://github.com/antoniogamiz/manga-api
+~~~
 
 Nota: necesitas tener instalado [velociraptor](https://github.com/umbopepato/velociraptor).
 
