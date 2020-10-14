@@ -13,7 +13,7 @@ jobs:
       - name: setup env
         shell: bash
         run: |
-          echo "::add-path::/home/runner/.deno/bin"
+          echo "/home/runner/.deno/bin" >> $GITHUB_PATH
       - name: Install task runer
         run: deno install -qA -n vr https://deno.land/x/velociraptor@1.0.0-beta.14/cli.ts
       - name: Linting
