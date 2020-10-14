@@ -12,4 +12,4 @@ En este [artículo](https://blog.cloudflare.com/generating-documentation-for-typ
 
 - Uso [deno](https://deno.land/) como runtime porque tiene soporte **nativo** para Typescript. Sólo por esa característica ya lo hace una alternativa superior a Node donde necesitas unos cuantos paquetes para simplemente ejecutar tu código.
 
-- Uso [jsdom](https://github.com/jsdom/jsdom) porque es la única alternativa a Cheerio que he encontrado para Deno (cheerio no funciona en node).
+- Uso [velociraptor](https://deno.land/x/velociraptor@1.0.0-beta.14) porque tiene un formato simple e intuitivo, te permite usar yaml, json o incluso un archivo en TypeScript. Dentro de las pocas opciones disponibles para Deno actualmente, es bastante conocido y tiene muchísimas opciones de configuración para modificar lo que necesites. Además el nombre mola.

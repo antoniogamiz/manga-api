@@ -1,3 +1,6 @@
+lenguaje: Deno
+test: tests/parser/manganelo.test.ts
+taskfile: scripts.yaml
 entidad:
   - src/parsers/manganelo.ts
   - src/types/manga.ts
