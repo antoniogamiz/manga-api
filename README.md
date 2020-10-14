@@ -49,6 +49,8 @@ La documentación sigue el estándar [tsdoc](https://github.com/microsoft/tsdoc)
 
 ### Historias de usuario:
 
+Los cambios aparecen descritos en el [CHANGELOG](docs/CHANGELOG.md) del proyecto.
+
 - [ ] [HU1: Consultar mangas disponibles](https://github.com/antoniogamiz/manga-api/issues/9)
 - [ ] [HU2: Consultar manga específico](https://github.com/antoniogamiz/manga-api/issues/10)
 - [ ] [HU3: consultar manga por criterios](https://github.com/antoniogamiz/manga-api/issues/11)
