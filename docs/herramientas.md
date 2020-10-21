@@ -56,3 +56,33 @@ Deno.test("Get chapter title", async () => {
 
 ~~~
 
+### Middleware framework
+
+Como middleware framework he usado [Oak](https://github.com/oakserver/oak). Dentro del ecosistema de Deno, es uno de los más avanzados y es el equivalente a [Koa](https://github.com/koajs/koa/) en NodeJS. Además está escrito por parte del equipo que escribío [ExpressJS](https://expressjs.com/es/).
+
+Voy a usar un middleware framework para mi API porque me proporciona muchas ventajas para un buen diseño de la API:
+
+- Añadir un logger común para todas las peticiones.
+- Descomponer mis endpoints en diferentes archivos de forma comprensiva.
+- Capturas los diferentes errores que se puedan producir con handlers específicos.
+- Trabajar de forma fácil con query parameters y similares.
+
+Deno provee sus propias implementación de un servidor [HTTP](https://deno.land/std@0.74.0/http), pero las funcionalidad que exporta es de más bajo nivel que la de Oak.
+
+También hay alternativas a Oak, como por ejemplo [Abc](https://deno.land/x/abc@v1.1.0), pero con una documentación y comunidad bastante más pobre que la de Oak.
+
+### Testear el servidor
+
+Para testear el servidor voy a usar dos librerías:
+
+- [SuperDeno](https://github.com/asos-craigmorten/superdeno): que facilita las aserciones sobre operaciones HTTP usando [superagent](https://github.com/visionmedia/superagent).
+- [SuperOak](https://github.com/asos-craigmorten/superoak): es un wrapper de SuperDeno añadiendo funcionalidad para Oak.
+
+Uso estas librerías para evitar repetir código en los tests (como preparar el servidor, hacer las peticiones, etc). Gracias a estas librerías los tests quedan mucho más legibles:
+
+~~~
+Deno.test("it should support the Oak framework", async () => {
+  const request = await superoak(app);
+  await request.get("/").expect("Hello Deno!");
+});
+~~~
