@@ -1,15 +1,30 @@
 // @ts-ignore deno-lint-ignore
 import { Chapter, ChapterEntry, Genre, Manga, Status } from "./manga.ts";
 
+export class ParsingError extends Error {
+    constructor( public attr: string,public url: string, public html?: string) {
+        super(`${attr} cannot be parsed in ${url}` );
+        this.html = html;
+        this.name = 'ParsingError';
+        Object.setPrototypeOf(this, new.target.prototype);
+    }
+}
+
+export type ParsingResult<T> = {
+  data: T;
+  error: ParsingError;
+}
+
 /**
  * Generic parser. All supported manga sites must provide an implementation of this interface.
  */
 export interface MangaParser {
-  parse: (html: string) => Manga;
-  parseTitle: (html: string) => string;
-  parseAlternativeTitles: (html: string) => string[];
-  parseStatus: (html: string) => Status;
-  parseGenres: (html: string) => Genre[];
-  parseChapters: (html: string) => ChapterEntry[];
-  parseChapter: (html: string) => Chapter;
+  parse: (html: string) => ParsingResult<Manga>;
+  parseTitle: (html: string) => ParsingResult<string>;
+  parseAlternativeTitles: (html: string) => ParsingResult<string[]>;
+  parseStatus: (html: string) => ParsingResult<Status>;
+  parseGenres: (html: string) => ParsingResult<Genre[]>;
+  parseChapters: (html: string) => ParsingResult<ChapterEntry[]>;
+  parseChapter: (html: string) => ParsingResult<Chapter>;
 }
+
