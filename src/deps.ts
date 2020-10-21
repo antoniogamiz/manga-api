@@ -12,6 +12,10 @@ export {
   Application,
   Context,
   Router,
+  helpers,
+  Status,
+  Response,
+  httpErrors,
 } from "https://deno.land/x/oak@v5.4.0/mod.ts";
 
 import { superoak } from "https://deno.land/x/superoak@2.3.1/mod.ts";
