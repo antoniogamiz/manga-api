@@ -2,18 +2,18 @@
 import { Chapter, ChapterEntry, Genre, Manga, Status } from "./manga.ts";
 
 export class ParsingError extends Error {
-    constructor( public attr: string,public url: string, public html?: string) {
-        super(`${attr} cannot be parsed in ${url}` );
-        this.html = html;
-        this.name = 'ParsingError';
-        Object.setPrototypeOf(this, new.target.prototype);
-    }
+  constructor(public attr: string, public html?: string) {
+    super(`${attr} cannot be parsed`);
+    this.html = html;
+    this.name = "ParsingError";
+    Object.setPrototypeOf(this, new.target.prototype);
+  }
 }
 
 export type ParsingResult<T> = {
   data: T;
-  error: ParsingError;
-}
+  error?: ParsingError;
+};
 
 /**
  * Generic parser. All supported manga sites must provide an implementation of this interface.
@@ -27,4 +27,3 @@ export interface MangaParser {
   parseChapters: (html: string) => ParsingResult<ChapterEntry[]>;
   parseChapter: (html: string) => ParsingResult<Chapter>;
 }
-
