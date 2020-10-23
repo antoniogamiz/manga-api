@@ -3,6 +3,11 @@ export default {
     {
       url: "https://manganelo.com/manga/read_one_piece_manga_online_free4",
       title: "One Piece",
+      indexes: {
+        alternativeTitles: 1,
+        status: 3,
+        genres: 4,
+      },
       alternativeTitles: [
         "ワンピース (Japanese)",
         "海盗路飞",
@@ -4303,6 +4308,11 @@ export default {
     {
       url: "https://manganelo.com/manga/hz924551",
       title: "Face With Love, Affection, And Time",
+      indexes: {
+        alternativeTitles: -1,
+        status: 2,
+        genres: 3,
+      },
       alternativeTitles: [],
       status: "Ongoing",
       genres: ["Drama", "Romance"],

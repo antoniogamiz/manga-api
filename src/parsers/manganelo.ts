@@ -16,6 +16,13 @@ import { cheerio } from "../deps.ts";
 /**
  * Parse for the [Manganelo](https://manganelo.com/) manga site.
  */
+
+export const enum ROW_HEADERS {
+  alternativeTitles = "Alternative",
+  status = "Status",
+  genres = "Genres",
+}
+
 export class ManganeloParser implements MangaParser {
   parse(html: string): ParsingResult<Manga> {
     const title = this.parseTitle(html);
@@ -53,8 +60,10 @@ export class ManganeloParser implements MangaParser {
 
   parseAlternativeTitles(html: string): ParsingResult<string[]> {
     const $ = cheerio.load(html);
+    const rowIndex = this.findCorrectIndex(ROW_HEADERS.alternativeTitles, html);
+    if (rowIndex === -1) return { data: [] };
     const alternativeTitles = $(
-      ".variations-tableInfo tbody tr:nth-child(1) td:nth-child(2) h2"
+      `.variations-tableInfo tbody tr:nth-child(${rowIndex}) td:nth-child(2) h2`
     )
       .text()
       .split(";")
@@ -67,9 +76,11 @@ export class ManganeloParser implements MangaParser {
   }
   parseStatus(html: string): ParsingResult<Status> {
     const $ = cheerio.load(html);
+    const rowIndex = this.findCorrectIndex(ROW_HEADERS.status, html);
     const statusText = $(
-      ".variations-tableInfo tbody tr:nth-child(3) td:nth-child(2)"
+      `.variations-tableInfo tbody tr:nth-child(${rowIndex}) td:nth-child(2)`
     ).text();
+    console.log(statusText);
     const status = Status[(statusText as unknown) as keyof typeof Status];
     const error = status ? undefined : new ParsingError("Status");
     return { data: status, error };
@@ -77,8 +88,9 @@ export class ManganeloParser implements MangaParser {
 
   parseGenres(html: string): ParsingResult<Genre[]> {
     const $ = cheerio.load(html);
+    const rowIndex = this.findCorrectIndex(ROW_HEADERS.genres, html);
     const genres = $(
-      ".variations-tableInfo tbody tr:nth-child(4) td:nth-child(2) a"
+      `.variations-tableInfo tbody tr:nth-child(${rowIndex}) td:nth-child(2) a`
     )
       .map((i: number, e: CheerioElement) => $(e).text())
       .get()
@@ -112,5 +124,16 @@ export class ManganeloParser implements MangaParser {
         ? undefined
         : new ParsingError(`Chapter(${chapter.title})`);
     return { data: chapter, error };
+  }
+
+  findCorrectIndex(header: ROW_HEADERS, html: string): number {
+    const $ = cheerio.load(html);
+    for (let i = 0; i < 5; i++) {
+      const rowTitle = $(
+        `.variations-tableInfo tbody tr:nth-child(${i}) td:nth-child(1)`
+      ).text();
+      if (rowTitle.includes(header)) return i;
+    }
+    return -1;
   }
 }
