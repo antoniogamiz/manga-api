@@ -59,7 +59,7 @@ for (let i = 0; i < spec.mangas.length; i++) {
   Deno.test(`Spec case ${i}: get all chapters`, async () => {
     const html: string = await fetchPage(spec.mangas[i].url);
     const chapters: ChapterEntry[] = parser.parseChapters(html).data;
-    assertEquals(chapters, spec.mangas[i].chapter_entries);
+    assertEquals(chapters, spec.mangas[i].chapterEntries);
   });
 
   Deno.test(`Spec case ${i}: get chapter title`, async () => {

@@ -21,7 +21,7 @@ export default {
       ],
       status: "Ongoing",
       genres: ["Action", "Adventure", "Comedy", "Drama", "Fantasy", "Shounen"],
-      chapter_entries: [
+      chapterEntries: [
         {
           url:
             "https://manganelo.com/chapter/read_one_piece_manga_online_free4/chapter_990",
@@ -4316,7 +4316,7 @@ export default {
       alternativeTitles: [],
       status: "Ongoing",
       genres: ["Drama", "Romance"],
-      chapter_entries: [
+      chapterEntries: [
         {
           url: "https://manganelo.com/chapter/hz924551/chapter_2",
         },

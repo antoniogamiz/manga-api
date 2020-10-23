@@ -45,7 +45,7 @@ export class ManganeloParser implements MangaParser {
         status: status.data,
         genres: genres.data,
         chapters: [],
-        chaptersEntries: chaptersEntries.data,
+        chapterEntries: chaptersEntries.data,
       },
       error: firstErrorInParsing,
     };

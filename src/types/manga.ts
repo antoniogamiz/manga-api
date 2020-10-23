@@ -16,7 +16,7 @@ export interface Manga {
    * Prefetched chapters. They are populated in the first call to parse.
    * Not loading all chapters at once speeds up simple queries.
    */
-  chaptersEntries: ChapterEntry[];
+  chapterEntries: ChapterEntry[];
 }
 
 /**
