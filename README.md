@@ -22,6 +22,10 @@ Para ejecutar el linter:
 
     vr lint
 
+Para correr el servidor en modo desarrollo (con `watch` activado):
+
+    vr dev
+
 El módulo todavía no cuenta con un instalador, por lo que si quieres usar el proyecto tendrás que descargarte el repositorio con el siguiente comando:
 
 ~~~
