@@ -17,45 +17,45 @@ import spec from "./manganelo-spec.js";
 
 const parser: ManganeloParser = new ManganeloParser();
 
-for (let i = 1; i < spec.mangas.length; i++) {
-  Deno.test("Parse title", async () => {
+for (let i = 0; i < spec.mangas.length; i++) {
+  Deno.test(`Spec case ${i}: title`, async () => {
     const html: string = await fetchPage(spec.mangas[i].url);
     const title: string = parser.parseTitle(html).data;
     assertEquals(title, spec.mangas[i].title);
   });
 
-  Deno.test("Parse alternative titles", async () => {
+  Deno.test(`Spec case ${i}: alternative titles`, async () => {
     const html: string = await fetchPage(spec.mangas[i].url);
     const alternativeTitles: string[] = parser.parseAlternativeTitles(html)
       .data;
     assertEquals(alternativeTitles, spec.mangas[i].alternativeTitles);
   });
 
-  Deno.test("Parse status", async () => {
+  Deno.test(`Spec case ${i}: status`, async () => {
     const html: string = await fetchPage(spec.mangas[i].url);
     const status: Status = parser.parseStatus(html).data;
     assertEquals(status, spec.mangas[i].status);
   });
 
-  Deno.test("Parse genres", async () => {
+  Deno.test(`Spec case ${i}: genres`, async () => {
     const html: string = await fetchPage(spec.mangas[i].url);
     const genres: Genre[] = parser.parseGenres(html).data;
     assertEquals(genres, spec.mangas[i].genres);
   });
 
-  Deno.test("Get all chapters", async () => {
+  Deno.test(`Spec case ${i}: get all chapters`, async () => {
     const html: string = await fetchPage(spec.mangas[i].url);
     const chapters: ChapterEntry[] = parser.parseChapters(html).data;
     assertEquals(chapters, spec.mangas[i].chapter_entries);
   });
 
-  Deno.test("Get chapter title", async () => {
+  Deno.test(`Spec case ${i}: get chapter title`, async () => {
     const html: string = await fetchPage(spec.mangas[i].chapters[0].url);
     const chapter: Chapter = parser.parseChapter(html).data;
     assertEquals(chapter.title, spec.mangas[i].chapters[0].title);
   });
 
-  Deno.test("Get chapter pages", async () => {
+  Deno.test(`Spec case ${i}: get chapter pages`, async () => {
     const html: string = await fetchPage(spec.mangas[i].chapters[0].url);
     const chapter: Chapter = parser.parseChapter(html).data;
     assertEquals(chapter.chapterPages, spec.mangas[i].chapters[0].chapterPages);
