@@ -80,7 +80,6 @@ export class ManganeloParser implements MangaParser {
     const statusText = $(
       `.variations-tableInfo tbody tr:nth-child(${rowIndex}) td:nth-child(2)`
     ).text();
-    console.log(statusText);
     const status = Status[(statusText as unknown) as keyof typeof Status];
     const error = status ? undefined : new ParsingError("Status");
     return { data: status, error };

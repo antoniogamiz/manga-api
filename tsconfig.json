@@ -3,6 +3,8 @@
     "module": "amd",
     "target": "esnext",
     "baseUrl": ".",
+    "importsNotUsedAsValues": "preserve",
+    "isolatedModules": false,
     "paths": {
       "http://*": ["../../../.deno/deps/http/*"],
       "https://*": ["../../../.deno/deps/https/*"],

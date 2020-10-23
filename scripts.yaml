@@ -5,12 +5,17 @@ scripts:
   start:
     desc: Run the app
     cmd: deno run index.ts
+    tsconfig: tsconfig.json
   dev:
     desc: Run the app in watch mode
-    cmd: deno run --unstable --watch  index.ts
+    cmd: deno run --unstable index.ts
+    watch: true
+    tsconfig: tsconfig.json
   test:
     desc: Run the tests
     cmd: deno test
+    tsconfig: tsconfig.json
   lint:
     desc: Linter
     cmd: deno lint --unstable
+    tsconfig: tsconfig.json
