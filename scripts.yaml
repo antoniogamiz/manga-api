@@ -5,6 +5,9 @@ scripts:
   start:
     desc: Run the app
     cmd: deno run index.ts
+  dev:
+    desc: Run the app in watch mode
+    cmd: deno run --unstable --watch  index.ts
   test:
     desc: Run the tests
     cmd: deno test
