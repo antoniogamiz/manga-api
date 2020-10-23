@@ -4300,5 +4300,55 @@ export default {
         },
       ],
     },
+    {
+      url: "https://manganelo.com/manga/hz924551",
+      title: "Face With Love, Affection, And Time",
+      alternativeTitles: [],
+      status: "Ongoing",
+      genres: ["Drama", "Romance"],
+      chapter_entries: [
+        {
+          url: "https://manganelo.com/chapter/hz924551/chapter_2",
+        },
+        {
+          url: "https://manganelo.com/chapter/hz924551/chapter_1",
+        },
+        {
+          url: "https://manganelo.com/chapter/hz924551/chapter_0",
+        },
+      ],
+      chapters: [
+        {
+          url: "https://manganelo.com/chapter/hz924551/chapter_0",
+          title: "FACE WITH LOVE, AFFECTION, AND TIME CHAPTER 0",
+          chapterPages: [
+            {
+              url:
+                "https://s8.mkklcdnv8.com/mangakakalot/h2/hz924551/chapter_0/1.jpg",
+            },
+            {
+              url:
+                "https://s8.mkklcdnv8.com/mangakakalot/h2/hz924551/chapter_0/2.jpg",
+            },
+            {
+              url:
+                "https://s8.mkklcdnv8.com/mangakakalot/h2/hz924551/chapter_0/3.jpg",
+            },
+            {
+              url:
+                "https://s8.mkklcdnv8.com/mangakakalot/h2/hz924551/chapter_0/4.jpg",
+            },
+            {
+              url:
+                "https://s8.mkklcdnv8.com/mangakakalot/h2/hz924551/chapter_0/5.jpg",
+            },
+            {
+              url:
+                "https://s8.mkklcdnv8.com/mangakakalot/h2/hz924551/chapter_0/6.jpg",
+            },
+          ],
+        },
+      ],
+    },
   ],
 };
