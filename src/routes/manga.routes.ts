@@ -1,5 +1,7 @@
-import { helpers, Status, httpErrors, Response } from "../deps.ts";
+// helpers, Status, httpErrors,
+import { Response } from "../deps.ts";
 import fetchPage from "../utils/http.ts";
+import { ManganeloParser } from "../parsers/index.ts";
 
 const getManga = async ({
   params,
@@ -8,11 +10,13 @@ const getManga = async ({
   params: { id: string };
   response: Response;
 }) => {
+  const html = await fetchPage(`https://manganelo.com/manga/${params.id}`);
+  const parser = new ManganeloParser();
   response.status = 200;
-  response.body = {
-    success: true,
-    data: params.id,
-  };
+  const result = parser.parse(html);
+  if (result.error)
+    response.body = { error: "This manga is not supported yet." };
+  else response.body = parser.parse(html).data;
   return;
 };
 
