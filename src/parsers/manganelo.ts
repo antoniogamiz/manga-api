@@ -58,6 +58,7 @@ export class ManganeloParser implements MangaParser {
     )
       .text()
       .split(";")
+      .filter(Boolean)
       .map((e: string) => e.trim());
     const error = alternativeTitles
       ? undefined
