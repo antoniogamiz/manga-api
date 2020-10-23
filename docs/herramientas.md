@@ -86,3 +86,12 @@ Deno.test("it should support the Oak framework", async () => {
   await request.get("/").expect("Hello Deno!");
 });
 ~~~
+
+### Docker
+
+Para crear un contenedor de Docker, primero he tenido que buscar una imagen base de la que partir o crear una propia en la que instalar Deno. He optado por la primera opción debido a varias razones:
+
+- Tamaño de la imagen: crear una imagen pequeña no es tarea fácil.
+- Frecuencia de actualización: Deno es un runtime de Typescript en desarrollo, con características no estables (de hecho, mi aplicación hay que ejecutarla con el flag `--unstable`). Por esa razón, si fuera a crear mi propia imagen base tendría que mantenerla muy actualizada.
+
+Dicho esto, Deno todavía no tiene una imagen de Docker oficial (ver [issue #3356](https://github.com/denoland/deno/issues/3356)), pero el usuario `hayd`, crea y mantiene imágenes de Deno con soporte para Ubuntu, Alpine, etc. Actualmente, esas son las recomendadas. Además la de Alpine, que es la que voy a usar, pesa sólo 27MB.
