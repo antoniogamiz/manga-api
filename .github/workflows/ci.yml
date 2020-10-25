@@ -25,12 +25,21 @@ jobs:
     if: ${{ needs.shouldBuild.outputs.changed == 'true' }}
     steps:
       - uses: actions/checkout@master
-      - name: Publish to Registry
+      - name: Publish to Docker Hub Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
           name: antoniogamiz/manga-api
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+      - uses: actions/checkout@v2
+      - name: Publish to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GH_REGISTRY_TOKEN }}
+      - name: Push
+        run: docker build -t ghcr.io/antoniogamiz/manga-api:latest . && docker push ghcr.io/antoniogamiz/manga-api:latest
   run-tests:
     needs: [build, shouldBuild]
     if: "always()"
