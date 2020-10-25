@@ -94,4 +94,11 @@ Para crear un contenedor de Docker, primero he tenido que buscar una imagen base
 - Tamaño de la imagen: crear una imagen pequeña no es tarea fácil.
 - Frecuencia de actualización: Deno es un runtime de Typescript en desarrollo, con características no estables (de hecho, mi aplicación hay que ejecutarla con el flag `--unstable`). Por esa razón, si fuera a crear mi propia imagen base tendría que mantenerla muy actualizada.
 
-Dicho esto, Deno todavía no tiene una imagen de Docker oficial (ver [issue #3356](https://github.com/denoland/deno/issues/3356)), pero el usuario `hayd`, crea y mantiene imágenes de Deno con soporte para Ubuntu, Alpine, etc. Actualmente, esas son las recomendadas. Además la de Alpine, que es la que voy a usar, pesa sólo 27MB.
+Dicho esto, Deno todavía no tiene una imagen de Docker oficial (ver [issue #3356](https://github.com/denoland/deno/issues/3356)), pero el usuario `hayd`, crea y mantiene imágenes de Deno con soporte para Ubuntu, Alpine, etc. Actualmente, esas son las recomendadas. Además la de Alpine, que es la que voy a usar, pesa sólo 64MB.
+
+|   | Build Time | Size |
+|---|---|---|
+| hayd  |  30 s | 72.6 MB   |
+| Homemade  |  61 s | 170 MB    |
+
+Como se ve, usar una imagen mantenida por la comunidad es mucho mejor que usar una propia.

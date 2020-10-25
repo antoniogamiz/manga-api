@@ -34,6 +34,17 @@ git clone https://github.com/antoniogamiz/manga-api
 
 Nota: necesitas tener instalado [velociraptor](https://github.com/umbopepato/velociraptor).
 
+## Docker
+
+He creado un contenedor de Docker que contiene Deno y las dependencias necesarias para ejecutar los tests y la aplicación (como Velociraptor, por ejemplo). El Dockerfile usado puede ser consultado [aquí](./Dockerfile).
+
+Para descargarte la imagen y ejecutar los tests (después de haberse descargado el repositorio), puedes ejecutar:
+
+    docker pull antoniogamiz/manga-api
+    docker run -t -v `pwd`:/test
+
+Como imagen base usamos una versión mantenida por la comunidad, el por qué puede ser consultado [aquí](https://github.com/antoniogamiz/manga-api/blob/master/docs/herramientas.md#docker).
+
 ## Documentación
 
 
