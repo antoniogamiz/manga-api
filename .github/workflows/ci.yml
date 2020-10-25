@@ -1,21 +1,22 @@
 name: Tests
 on: [push]
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Publish to Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: antoniogamiz/manga-api
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
   run-tests:
     runs-on: ubuntu-latest
+    container: antoniogamiz/manga-api
     steps:
       - name: Checkout module
         uses: actions/checkout@v2
-      - name: Set Deno version
-        uses: denolib/setup-deno@v2
-        with:
-          deno-version: 1.4.4
-      - name: setup env
-        shell: bash
-        run: |
-          echo "/home/runner/.deno/bin" >> $GITHUB_PATH
-      - name: Install task runer
-        run: deno install -qA -n vr https://deno.land/x/velociraptor@1.0.0-beta.14/cli.ts
       - name: Linting
         run: vr lint
       - name: Test Deno Module
