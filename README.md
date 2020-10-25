@@ -45,6 +45,10 @@ Para descargarte la imagen y ejecutar los tests (después de haberse descargado 
 
 Como imagen base usamos una versión mantenida por la comunidad, el por qué puede ser consultado [aquí](https://github.com/antoniogamiz/manga-api/blob/master/docs/herramientas.md#docker).
 
+El contenedor también se encuentra disponible en el [registro de GitHub](https://github.com/users/antoniogamiz/packages/container/package/manga-api). Puedes descargártelo con el siguiente comando:
+
+    docker pull ghcr.io/antoniogamiz/manga-api:latest
+
 ## Documentación
 
 
