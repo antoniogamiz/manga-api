@@ -1,8 +1,28 @@
 name: Tests
+
 on: [push]
+
 jobs:
-  build:
+  shouldBuild:
     runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.shouldBuild.outputs.files }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dorny/paths-filter@v2
+        id: shouldBuild
+        with:
+          filters: |
+            files:
+              - 'Dockerfile'
+              - 'src/deps.ts'
+              - 'scripts.yaml'
+              - 'tsconfig.json'
+              - '.github/workflows/ci.yml'
+  build:
+    needs: shouldBuild
+    runs-on: ubuntu-latest
+    if: ${{ needs.shouldBuild.outputs.changed == 'true' }}
     steps:
       - uses: actions/checkout@master
       - name: Publish to Registry
@@ -12,8 +32,9 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
   run-tests:
+    needs: build
     runs-on: ubuntu-latest
-    container: antoniogamiz/manga-api
+    container: antoniogamiz/manga-api:latest
     steps:
       - name: Checkout module
         uses: actions/checkout@v2
