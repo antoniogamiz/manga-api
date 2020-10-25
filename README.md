@@ -28,7 +28,7 @@ Para correr el servidor en modo desarrollo (con `watch` activado):
 
 El módulo todavía no cuenta con un instalador, por lo que si quieres usar el proyecto tendrás que descargarte el repositorio con el siguiente comando:
 
-~~~
+~~~bash
 git clone https://github.com/antoniogamiz/manga-api
 ~~~
 
