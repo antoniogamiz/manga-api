@@ -44,11 +44,8 @@ jobs:
     needs: [build, shouldBuild]
     if: "always()"
     runs-on: ubuntu-latest
-    container: antoniogamiz/manga-api:latest
     steps:
       - name: Checkout module
         uses: actions/checkout@v2
-      - name: Linting
-        run: vr lint
-      - name: Test Deno Module
-        run: vr test
+      - name: Run tests
+        run: docker run -t -v `pwd`:/test antoniogamiz/manga-api
