@@ -127,7 +127,14 @@ export class ManganeloParser implements MangaParser {
   }
 
   parseMangaList(html: string): ParsingResult<MangaListEntry[]> {
-    return { data: [] };
+    const $ = cheerio.load(html);
+    const entries = $(".panel-content-genres .content-genres-item > a")
+      .map((i: number, e: cheerio) => ({
+        title: $(e).attr("title"),
+        url: $(e).attr("href"),
+      }))
+      .get();
+    return { data: entries };
   }
 
   findCorrectIndex(header: ROW_HEADERS, html: string): number {

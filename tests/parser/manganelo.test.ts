@@ -7,6 +7,7 @@ import {
   ChapterEntry,
   Genre,
   Manga,
+  MangaListEntry,
   Status,
   // @ts-ignore deno-lint-ignore
 } from "../../src/types/index.ts";
@@ -74,3 +75,9 @@ for (let i = 0; i < spec.mangas.length; i++) {
     assertEquals(chapter.chapterPages, spec.mangas[i].chapters[0].chapterPages);
   });
 }
+
+Deno.test("Manga list page", async () => {
+  const html: string = await fetchPage(spec.mangaList.url);
+  const entries: MangaListEntry[] = parser.parseMangaList(html).data;
+  assertEquals(entries, spec.mangaList.entries);
+});
