@@ -1,4 +1,4 @@
-45
+54
 API
 License
 GPL
@@ -44,3 +44,12 @@ ghcr
 io
 CHANGELOG
 latest
+Endpoints
+endpoints
+mangaId
+chapterId
+available
+n
+paginación
+JSON
+leíble
