@@ -34,3 +34,21 @@ export const getMangaList = async ({
   else response.body = data;
   return;
 };
+
+export const getChapter = async ({
+  params,
+  response,
+}: {
+  params: { mangaId: string; chapterId: string };
+  response: Response;
+}) => {
+  const html = await fetchPage(
+    `https://manganelo.com/chapter/${params.mangaId}/${params.chapterId}`
+  );
+  const parser = new ManganeloParser();
+  response.status = 200;
+  const { data, error } = parser.parseChapter(html);
+  if (error) response.body = { error: error };
+  else response.body = data;
+  return;
+};

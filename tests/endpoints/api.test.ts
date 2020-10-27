@@ -28,3 +28,15 @@ Deno.test("Consult available manga", async () => {
     .get(`/available/${n}`)
     .expect(JSON.stringify(spec.mangaList.entries1159));
 });
+
+Deno.test("Consult chapter", async () => {
+  const request = await superoak(app);
+  const mangaId = "read_one_piece_manga_online_free4";
+  const chapterId = "chapter_1";
+  await request.get(`/mangas/${mangaId}/${chapterId}`).expect(
+    JSON.stringify({
+      title: spec.mangas[0].chapters[0].title,
+      chapterPages: spec.mangas[0].chapters[0].chapterPages,
+    })
+  );
+});
