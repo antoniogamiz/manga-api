@@ -3,7 +3,7 @@ import { Response } from "../deps.ts";
 import fetchPage from "../utils/http.ts";
 import { ManganeloParser } from "../parsers/index.ts";
 
-const getManga = async ({
+export const getManga = async ({
   params,
   response,
 }: {
@@ -13,11 +13,24 @@ const getManga = async ({
   const html = await fetchPage(`https://manganelo.com/manga/${params.id}`);
   const parser = new ManganeloParser();
   response.status = 200;
-  const result = parser.parse(html);
-  if (result.error)
-    response.body = { error: "This manga is not supported yet." };
-  else response.body = parser.parse(html).data;
+  const { data, error } = parser.parse(html);
+  if (error) response.body = { error: "This manga is not supported yet." };
+  else response.body = data;
   return;
 };
 
-export { getManga };
+export const getMangaList = async ({
+  params,
+  response,
+}: {
+  params: { n: string };
+  response: Response;
+}) => {
+  const html = await fetchPage(`https://manganelo.com/genre-all/${params.n}`);
+  const parser = new ManganeloParser();
+  response.status = 200;
+  const { data, error } = parser.parseMangaList(html);
+  if (error) response.body = { error: error };
+  else response.body = data;
+  return;
+};

@@ -4364,6 +4364,80 @@ export default {
   mangaList: {
     url:
       "https://manganelo.com/advanced_search?s=all&sts=completed&orby=topview&page=1",
+    entries1159: [
+      {
+        title: "Hakobunjaa",
+        url: "https://manganelo.com/manga/hakobunjaa",
+      },
+      {
+        title: "Hakui no Shihaisha",
+        url: "https://manganelo.com/manga/hakui_no_shihaisha",
+      },
+      {
+        title: "Hakuouki",
+        url: "https://manganelo.com/manga/hakuouki",
+      },
+      {
+        title: "Hana Meguri Goyou!",
+        url: "https://manganelo.com/manga/hana_meguri_goyou",
+      },
+      {
+        title: "Hana no Aru Seikatsu",
+        url: "https://manganelo.com/manga/hana_no_aru_seikatsu",
+      },
+      {
+        title: "0 no Soukoushi",
+        url: "https://manganelo.com/manga/0_no_soukoushi",
+      },
+      {
+        title: "01 (OKU Hiroya)",
+        url: "https://manganelo.com/manga/01_oku_hiroya",
+      },
+      {
+        title: "01 Monkey",
+        url: "https://manganelo.com/manga/01_monkey",
+      },
+      {
+        title: "090 ~Eko to Issho~",
+        url: "https://manganelo.com/manga/090_eko_to_issho",
+      },
+      {
+        title: "0x0 Memories",
+        url: "https://manganelo.com/manga/0x0_memories",
+      },
+      {
+        title: "1-en no Otoko",
+        url: "https://manganelo.com/manga/1en_no_otoko",
+      },
+      {
+        title: "1-nen 5-kumi Ikimono Gakari",
+        url: "https://manganelo.com/manga/1nen_5kumi_ikimono_gakari",
+      },
+      {
+        title: "1/2 Fairy!",
+        url: "https://manganelo.com/manga/12_fairy",
+      },
+      {
+        title: "Kurayami no Shutter Speed",
+        url: "https://manganelo.com/manga/kurayami_no_shutter_speed",
+      },
+      {
+        title: "Caramel Crunch",
+        url: "https://manganelo.com/manga/caramel_crunch",
+      },
+      {
+        title: "Step One",
+        url: "https://manganelo.com/manga/step_one",
+      },
+      {
+        title: "Kiss and Hang!!",
+        url: "https://manganelo.com/manga/kiss_and_hang",
+      },
+      {
+        title: "Yours and My Different Meanings",
+        url: "https://manganelo.com/manga/yours_and_my_different_meanings",
+      },
+    ],
     entries: [
       {
         title: "Tomo-chan wa Onnanoko!",
