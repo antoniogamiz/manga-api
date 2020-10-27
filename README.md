@@ -77,7 +77,7 @@ He creado un contenedor de Docker que contiene Deno y las dependencias necesaria
 Para descargarte la imagen y ejecutar los tests (después de haberse descargado el repositorio), puedes ejecutar:
 
     docker pull antoniogamiz/manga-api
-    docker run -t -v `pwd`:/test
+    docker run -t -v `pwd`:/test manga-api
 
 Como imagen base usamos una versión mantenida por la comunidad, el por qué puede ser consultado [aquí](https://github.com/antoniogamiz/manga-api/blob/master/docs/herramientas.md#docker).
 
@@ -102,16 +102,14 @@ También puedes ver cómo y por qué publicamos en dos registros distintos [aqu�
 
 La documentación sigue el estándar [tsdoc](https://github.com/microsoft/tsdoc) y es generada usando [typedoc](https://github.com/TypeStrong/typedoc).
 
-*NOTA*: Actualmente está rota porque TypeDoc tiene bastantes problemas con la forma de importar tipos de Deno. Estoy intentando solucionarlo o buscar una alternativa (hay pocas tirando a ninguna).
-
 ### Historias de usuario:
 
 Los cambios aparecen descritos en el [CHANGELOG](docs/CHANGELOG.md) del proyecto.
 
-- [ ] [HU1: Consultar mangas disponibles](https://github.com/antoniogamiz/manga-api/issues/9)
-- [ ] [HU2: Consultar manga específico](https://github.com/antoniogamiz/manga-api/issues/10)
+- [x] [HU1: Consultar mangas disponibles](https://github.com/antoniogamiz/manga-api/issues/9)
+- [x] [HU2: Consultar manga específico](https://github.com/antoniogamiz/manga-api/issues/10)
 - [ ] [HU3: consultar manga por criterios](https://github.com/antoniogamiz/manga-api/issues/11)
-- [ ] [HU4: consultar capítulo de un manga](https://github.com/antoniogamiz/manga-api/issues/12)
+- [x] [HU4: consultar capítulo de un manga](https://github.com/antoniogamiz/manga-api/issues/12)
 
 
 ### Enlaces de interés
