@@ -49,6 +49,8 @@ El contenedor también se encuentra disponible en el [registro de GitHub](https:
 
     docker pull ghcr.io/antoniogamiz/manga-api:latest
 
+También puedes ver cómo y por qué publicamos en dos registros distintos [aquí](docs/build.md).
+
 ## Documentación
 
 

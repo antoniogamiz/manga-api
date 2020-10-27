@@ -9,7 +9,6 @@ USER deno
 WORKDIR /test
 
 RUN deno install -qA -n vr https://deno.land/x/velociraptor@1.0.0-beta.15/cli.ts
-RUN which vr
 ADD src/deps.ts .
 RUN deno cache deps.ts
 RUN rm deps.ts
