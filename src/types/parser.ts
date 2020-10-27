@@ -1,5 +1,12 @@
 // @ts-ignore deno-lint-ignore
-import { Chapter, ChapterEntry, Genre, Manga, Status } from "./manga.ts";
+import {
+  Chapter,
+  ChapterEntry,
+  Genre,
+  Manga,
+  MangaListEntry,
+  Status,
+} from "./manga.ts";
 
 export class ParsingError extends Error {
   constructor(public attr: string, public html?: string) {
@@ -26,4 +33,5 @@ export interface MangaParser {
   parseGenres: (html: string) => ParsingResult<Genre[]>;
   parseChapters: (html: string) => ParsingResult<ChapterEntry[]>;
   parseChapter: (html: string) => ParsingResult<Chapter>;
+  parseMangaList: (html: string) => ParsingResult<MangaListEntry[]>;
 }

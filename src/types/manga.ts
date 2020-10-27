@@ -97,3 +97,8 @@ export enum Genre {
   Yaoi = "Yaoi",
   Yuri = "Yuri",
 }
+
+export interface MangaListEntry {
+  title: string;
+  url: string;
+}

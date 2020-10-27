@@ -7,6 +7,7 @@ import {
   Status,
   ParsingResult,
   ParsingError,
+  MangaListEntry,
   // @ts-ignore deno-lint-ignore
 } from "../types/index.ts";
 
@@ -123,6 +124,10 @@ export class ManganeloParser implements MangaParser {
         ? undefined
         : new ParsingError(`Chapter(${chapter.title})`);
     return { data: chapter, error };
+  }
+
+  parseMangaList(html: string): ParsingResult<MangaListEntry[]> {
+    return { data: [] };
   }
 
   findCorrectIndex(header: ROW_HEADERS, html: string): number {
