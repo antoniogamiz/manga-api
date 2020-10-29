@@ -72,7 +72,7 @@ Para ver el resultado de los ejemplos como JSON leíble, añade `| python -mjson
 
 ## Docker
 
-He creado un contenedor de Docker que contiene Deno y las dependencias necesarias para ejecutar los tests y la aplicación (como Velociraptor, por ejemplo). El Dockerfile usado puede ser consultado [aquí](./Dockerfile).
+He creado un contenedor de [Docker Hub](https://hub.docker.com/repository/docker/antoniogamiz/manga-api) que contiene Deno y las dependencias necesarias para ejecutar los tests y la aplicación (como Velociraptor, por ejemplo). El Dockerfile usado puede ser consultado [aquí](./Dockerfile).
 
 Para descargarte la imagen y ejecutar los tests (después de haberse descargado el repositorio), puedes ejecutar:
 
@@ -88,7 +88,6 @@ El contenedor también se encuentra disponible en el [registro de GitHub](https:
 También puedes ver cómo y por qué publicamos en dos registros distintos [aquí](docs/build.md).
 
 ## Documentación
-
 
 - [GH Pages](https://antoniogamiz.github.io/manga-api/)
 - Lenguaje: [Typescript](https://www.typescriptlang.org/)
