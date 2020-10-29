@@ -34,42 +34,6 @@ git clone https://github.com/antoniogamiz/manga-api
 
 Nota: necesitas tener instalado [velociraptor](https://github.com/umbopepato/velociraptor).
 
-## Endpoints
-
-La API tiene varios endpoints disponibles:
-
-#### /mangas/:id
-
-Consulta un manga dada una `id`.
-
-Ejemplo:
-
-~~~~bash
-$ curl http://localhost:8000/mangas/read_one_piece_manga_online_free4
-~~~~
-
-#### /mangas/:mangaId/:chapterId
-
-Consulta el capítulo de un manga dados el id del manga (`mangaId`) y el id del capítulo (`chapterId`).
-
-Ejemplo:
-
-~~~~bash
-$ curl http://localhost:8000/mangas/read_one_piece_manga_online_free4/chapter_1
-~~~~
-
-#### /available/:n
-
-Consulta los mangas disponibles usando un índice de paginación (`n`).
-
-Ejemplo:
-
-~~~~bash
-$ curl http://localhost:8000/available/28
-~~~~
-
-Para ver el resultado de los ejemplos como JSON leíble, añade `| python -mjson.tool` al final de cada comando.
-
 ## Docker
 
 He creado un contenedor de [Docker Hub](https://hub.docker.com/repository/docker/antoniogamiz/manga-api) que contiene Deno y las dependencias necesarias para ejecutar los tests y la aplicación (como Velociraptor, por ejemplo). El Dockerfile usado puede ser consultado [aquí](./Dockerfile).
@@ -97,7 +61,7 @@ También puedes ver cómo y por qué publicamos en dos registros distintos [aqu�
 - Principales tipos:
     - [Relacionados con manga](/src/types/manga.ts)
     - [Relacionados con parsers](/src/types/parser.ts)
-
+- [Diferentes endpoints](/docs/endpoints.md)
 
 La documentación sigue el estándar [tsdoc](https://github.com/microsoft/tsdoc) y es generada usando [typedoc](https://github.com/TypeStrong/typedoc).
 
