@@ -4334,27 +4334,27 @@ export default {
           chapterPages: [
             {
               url:
-                "https://s7.mkklcdnv8.com/mangakakalot/h2/hz924551/chapter_0/1.jpg",
+                "https://s7.mkklcdnv7.com/mangakakalot/h2/hz924551/chapter_0/1.jpg",
             },
             {
               url:
-                "https://s7.mkklcdnv8.com/mangakakalot/h2/hz924551/chapter_0/2.jpg",
+                "https://s7.mkklcdnv7.com/mangakakalot/h2/hz924551/chapter_0/2.jpg",
             },
             {
               url:
-                "https://s7.mkklcdnv8.com/mangakakalot/h2/hz924551/chapter_0/3.jpg",
+                "https://s7.mkklcdnv7.com/mangakakalot/h2/hz924551/chapter_0/3.jpg",
             },
             {
               url:
-                "https://s7.mkklcdnv8.com/mangakakalot/h2/hz924551/chapter_0/4.jpg",
+                "https://s7.mkklcdnv7.com/mangakakalot/h2/hz924551/chapter_0/4.jpg",
             },
             {
               url:
-                "https://s7.mkklcdnv8.com/mangakakalot/h2/hz924551/chapter_0/5.jpg",
+                "https://s7.mkklcdnv7.com/mangakakalot/h2/hz924551/chapter_0/5.jpg",
             },
             {
               url:
-                "https://s7.mkklcdnv8.com/mangakakalot/h2/hz924551/chapter_0/6.jpg",
+                "https://s7.mkklcdnv7.com/mangakakalot/h2/hz924551/chapter_0/6.jpg",
             },
           ],
         },
