@@ -3,7 +3,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 ![Documentation](https://github.com/antoniogamiz/manga-api/workflows/Documentation/badge.svg)
 ![Tests CI](https://github.com/antoniogamiz/manga-api/workflows/Tests/badge.svg)
-
+[![Build Status](https://travis-ci.com/antoniogamiz/manga-api.svg?branch=master)](https://travis-ci.com/antoniogamiz/manga-api)
 ## Descripción
 
 Pequeña API para consultar información relativas a mangas tales como autores, género, capítulos y obtener enlaces a las correspondientes imágenes de cada capítulo. Este API pretende ser usada por aplicaciones móviles o páginas web para *leer* manga.
