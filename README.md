@@ -4,6 +4,7 @@
 ![Documentation](https://github.com/antoniogamiz/manga-api/workflows/Documentation/badge.svg)
 ![Tests CI](https://github.com/antoniogamiz/manga-api/workflows/Tests/badge.svg)
 [![Build Status](https://travis-ci.com/antoniogamiz/manga-api.svg?branch=master)](https://travis-ci.com/antoniogamiz/manga-api)
+
 ## Descripción
 
 Pequeña API para consultar información relativas a mangas tales como autores, género, capítulos y obtener enlaces a las correspondientes imágenes de cada capítulo. Este API pretende ser usada por aplicaciones móviles o páginas web para *leer* manga.
@@ -62,6 +63,7 @@ También puedes ver cómo y por qué publicamos en dos registros distintos [aqu�
     - [Relacionados con manga](/src/types/manga.ts)
     - [Relacionados con parsers](/src/types/parser.ts)
 - [Diferentes endpoints](/docs/endpoints.md)
+- [Integración continua](/docs/ci.md)
 
 La documentación sigue el estándar [tsdoc](https://github.com/microsoft/tsdoc) y es generada usando [typedoc](https://github.com/TypeStrong/typedoc).
 
