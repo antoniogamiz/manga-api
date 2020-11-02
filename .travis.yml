@@ -1,0 +1,9 @@
+services:
+  - docker
+
+before_install:
+  - git checkout master
+  - docker pull ghcr.io/antoniogamiz/manga-api
+
+script:
+  - docker run -t -v `pwd`:/test ghcr.io/antoniogamiz/manga-api
