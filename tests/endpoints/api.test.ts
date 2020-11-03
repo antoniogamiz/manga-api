@@ -21,13 +21,13 @@ for (let i = 0; i < spec.mangas.length; i++) {
   });
 }
 
-// Deno.test("Consult available manga", async () => {
-//   const request = await superoak(app);
-//   const n = 1159;
-//   await request
-//     .get(`/available/${n}`)
-//     .expect(JSON.stringify(spec.mangaList.entries1159));
-// });
+Deno.test("Consult available manga", async () => {
+  const request = await superoak(app);
+  const n = 1159;
+  await request
+    .get(`/available/${n}`)
+    .expect(JSON.stringify(spec.mangaList.entries1159));
+});
 
 Deno.test("Consult chapter", async () => {
   const request = await superoak(app);

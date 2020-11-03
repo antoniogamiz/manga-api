@@ -4365,77 +4365,68 @@ export default {
     url:
       "https://manganelo.com/advanced_search?s=all&sts=completed&orby=topview&page=1",
     entries1159: [
+      { title: "Haa Haa", url: "https://manganelo.com/manga/haa_haa" },
+      { title: "...Curtain", url: "https://manganelo.com/manga/curtain" },
       {
-        title: "Hakobunjaa",
-        url: "https://manganelo.com/manga/hakobunjaa",
+        title: "...Junai no Seinen",
+        url: "https://manganelo.com/manga/junai_no_seinen",
       },
       {
-        title: "Hakui no Shihaisha",
-        url: "https://manganelo.com/manga/hakui_no_shihaisha",
+        title: "Hachimitsu no Aji",
+        url: "https://manganelo.com/manga/hachimitsu_no_aji",
+      },
+      { title: "...no Onna", url: "https://manganelo.com/manga/no_onna" },
+      {
+        title: "Hachimitsu Ouji wa Shitsuji ni Madou",
+        url: "https://manganelo.com/manga/hachimitsu_ouji_wa_shitsuji_ni_madou",
       },
       {
-        title: "Hakuouki",
-        url: "https://manganelo.com/manga/hakuouki",
+        title: "...Virgin Love.",
+        url: "https://manganelo.com/manga/virgin_love",
+      },
+      { title: ".hack//4koma", url: "https://manganelo.com/manga/hack4koma" },
+      { title: ".hack//Alcor", url: "https://manganelo.com/manga/hackalcor" },
+      {
+        title: "Hachiue no Juunin",
+        url: "https://manganelo.com/manga/hachiue_no_juunin",
+      },
+      { title: ".hack//G.U.+", url: "https://manganelo.com/manga/hackgu" },
+      {
+        title: "Hada made Aishite",
+        url: "https://manganelo.com/manga/hada_made_aishite",
       },
       {
-        title: "Hana Meguri Goyou!",
-        url: "https://manganelo.com/manga/hana_meguri_goyou",
+        title: "Hada no Ue no Renai Jijou",
+        url: "https://manganelo.com/manga/hada_no_ue_no_renai_jijou",
       },
       {
-        title: "Hana no Aru Seikatsu",
-        url: "https://manganelo.com/manga/hana_no_aru_seikatsu",
+        title: "Hagakure no Koi",
+        url: "https://manganelo.com/manga/hagakure_no_koi",
+      },
+      { title: ".hack//Link", url: "https://manganelo.com/manga/hacklink" },
+      { title: "Hagane", url: "https://manganelo.com/manga/hagane" },
+      {
+        title: "",
+        url: "https://manganelo.com/manga/bungaku_shoujo_to_ue_kawaku_yuurei",
       },
       {
-        title: "0 no Soukoushi",
-        url: "https://manganelo.com/manga/0_no_soukoushi",
+        title: "'Hajimete' Ageru!",
+        url: "https://manganelo.com/manga/hajimete_ageru",
+      },
+      { title: "", url: "https://manganelo.com/manga/gokko" },
+      { title: "(G) Edition", url: "https://manganelo.com/manga/g_edition" },
+      {
+        title: "Haginokouji Seiya-sama no Ran",
+        url: "https://manganelo.com/manga/haginokouji_seiyasama_no_ran",
       },
       {
-        title: "01 (OKU Hiroya)",
-        url: "https://manganelo.com/manga/01_oku_hiroya",
+        title: "Hagure Yuusha no Kichiku Bigaku",
+        url: "https://manganelo.com/manga/hagure_yuusha_no_kichiku_bigaku",
       },
+      { title: "[Switch]", url: "https://manganelo.com/manga/switch" },
       {
-        title: "01 Monkey",
-        url: "https://manganelo.com/manga/01_monkey",
-      },
-      {
-        title: "090 ~Eko to Issho~",
-        url: "https://manganelo.com/manga/090_eko_to_issho",
-      },
-      {
-        title: "0x0 Memories",
-        url: "https://manganelo.com/manga/0x0_memories",
-      },
-      {
-        title: "1-en no Otoko",
-        url: "https://manganelo.com/manga/1en_no_otoko",
-      },
-      {
-        title: "1-nen 5-kumi Ikimono Gakari",
-        url: "https://manganelo.com/manga/1nen_5kumi_ikimono_gakari",
-      },
-      {
-        title: "1/2 Fairy!",
-        url: "https://manganelo.com/manga/12_fairy",
-      },
-      {
-        title: "Kurayami no Shutter Speed",
-        url: "https://manganelo.com/manga/kurayami_no_shutter_speed",
-      },
-      {
-        title: "Caramel Crunch",
-        url: "https://manganelo.com/manga/caramel_crunch",
-      },
-      {
-        title: "Step One",
-        url: "https://manganelo.com/manga/step_one",
-      },
-      {
-        title: "Kiss and Hang!!",
-        url: "https://manganelo.com/manga/kiss_and_hang",
-      },
-      {
-        title: "Yours and My Different Meanings",
-        url: "https://manganelo.com/manga/yours_and_my_different_meanings",
+        title: "Hai to Diamond",
+        url: "https://manganelo.com/manga/hai_to_diamond",
       },
     ],
     entries: [
