@@ -1,0 +1,3 @@
+# Directorio de tests
+
+Después de leer [esta pregunta](https://stackoverflow.com/questions/42385701/pros-and-cons-of-placing-test-files-in-the-same-folder-as-source-files-or-separ) de StackOverflow he visto que el único sitio donde tiene sentido tener la carpeta de `test` dentro de `src` es si usas Angular o similares donde los componentes son unidades independientes. Aunque incluso en estos proyectos algunas veces al final hay que crear directorios aparte para almacenar los `e2e` tests. Por estas razones voy a dejar la carpeta de tests donde está ahora.
