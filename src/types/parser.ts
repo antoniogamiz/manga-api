@@ -23,9 +23,16 @@ export type ParsingResult<T> = {
 };
 
 /**
+ * Every page form genre URLs in a different way, so we need to store it
+ * to know where to parse genre information
+ */
+export type GenreURLs = Record<Genre, string>;
+
+/**
  * Generic parser. All supported manga sites must provide an implementation of this interface.
  */
 export interface MangaParser {
+  genreURLs: GenreURLs;
   parse: (html: string) => ParsingResult<Manga>;
   parseTitle: (html: string) => ParsingResult<string>;
   parseAlternativeTitles: (html: string) => ParsingResult<string[]>;

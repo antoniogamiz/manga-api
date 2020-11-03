@@ -8,6 +8,7 @@ import {
   ParsingResult,
   ParsingError,
   MangaListEntry,
+  GenreURLs,
   // @ts-ignore deno-lint-ignore
 } from "../types/index.ts";
 
@@ -147,4 +148,47 @@ export class ManganeloParser implements MangaParser {
     }
     return -1;
   }
+
+  genreURLs: GenreURLs = {
+    Action: "https://manganelo.com/genre-2",
+    Adult: "https://manganelo.com/genre-3",
+    Adventure: "https://manganelo.com/genre-4",
+    Comedy: "https://manganelo.com/genre-6",
+    Cooking: "https://manganelo.com/genre-7",
+    Doujinshi: "https://manganelo.com/genre-9",
+    Drama: "https://manganelo.com/genre-10",
+    Ecchi: "https://manganelo.com/genre-11",
+    Fantasy: "https://manganelo.com/genre-12",
+    "Gender bender": "https://manganelo.com/genre-13",
+    Harem: "https://manganelo.com/genre-14",
+    Historical: "https://manganelo.com/genre-15",
+    Horror: "https://manganelo.com/genre-16",
+    Isekai: "https://manganelo.com/genre-45",
+    Josei: "https://manganelo.com/genre-17",
+    Manhua: "https://manganelo.com/genre-44",
+    Manhwa: "https://manganelo.com/genre-43",
+    "Martial arts": "https://manganelo.com/genre-19",
+    Mature: "https://manganelo.com/genre-20",
+    Mecha: "https://manganelo.com/genre-21",
+    Medical: "https://manganelo.com/genre-22",
+    Mystery: "https://manganelo.com/genre-24",
+    "One shot": "https://manganelo.com/genre-25",
+    Psychological: "https://manganelo.com/genre-26",
+    Romance: "https://manganelo.com/genre-27",
+    "School life": "https://manganelo.com/genre-28",
+    "Sci fi": "https://manganelo.com/genre-29",
+    Seinen: "https://manganelo.com/genre-30",
+    Shoujo: "https://manganelo.com/genre-31",
+    "Shoujo ai": "https://manganelo.com/genre-32",
+    Shounen: "https://manganelo.com/genre-33",
+    "Shounen ai": "https://manganelo.com/genre-34",
+    "Slice of life": "https://manganelo.com/genre-35",
+    Smut: "https://manganelo.com/genre-36",
+    Sports: "https://manganelo.com/genre-37",
+    Supernatural: "https://manganelo.com/genre-38",
+    Tragedy: "https://manganelo.com/genre-39",
+    Webtoons: "https://manganelo.com/genre-40",
+    Yaoi: "https://manganelo.com/genre-41",
+    Yuri: "https://manganelo.com/genre-42",
+  };
 }
