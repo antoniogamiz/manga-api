@@ -64,6 +64,7 @@ export const getMangaByGenre = async ({
   const parser = new ManganeloParser();
   const url = parser.genreURLs[params.genre];
   if (!url) {
+    response.status = 422;
     response.body = { error: "Bad genre used." };
     return;
   }
@@ -83,6 +84,7 @@ export const getMangaByStatus = async ({
   response: Response;
 }) => {
   if (params.status !== "ongoing" && params.status !== "completed") {
+    response.status = 422;
     response.body = {
       error: "Bad status: only ongoing or completed are valid.",
     };
