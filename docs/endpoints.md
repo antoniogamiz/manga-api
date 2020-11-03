@@ -32,4 +32,24 @@ Ejemplo:
 $ curl http://localhost:8000/available/28
 ~~~~
 
+#### /available/genre/:genre
+
+Consulta los mangas disponibles de género `genre`.
+
+Ejemplo:
+
+~~~~bash
+$ curl http://localhost:8000/available/genre/Action
+~~~~
+
+#### /available/status/:staus
+
+Consulta los mangas disponibles con status `status`.
+
+Ejemplo:
+
+~~~~bash
+$ curl http://localhost:8000/available/status/ongoing
+~~~~
+
 Para ver el resultado de los ejemplos como JSON leíble, añade `| python -mjson.tool` al final de cada comando.
