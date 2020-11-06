@@ -4365,6 +4365,56 @@ export default {
     url:
       "https://manganelo.com/advanced_search?s=all&sts=completed&orby=topview&page=1",
     entries1159: [
+      {
+        title: "Trace: Perfume",
+        url: "https://manganelo.com/manga/trace_perfume",
+      },
+      {
+        title: "Greenhouse Dancing Club",
+        url: "https://manganelo.com/manga/greenhouse_dancing_club",
+      },
+      { title: "Grey", url: "https://manganelo.com/manga/grey" },
+      {
+        title:
+          "Umineko no Naku Koro ni Chiru Episode 6: Dawn of the Golden Witch",
+        url:
+          "https://manganelo.com/manga/umineko_no_naku_koro_ni_chiru_episode_6_dawn_of_the_golden_witch",
+      },
+      {
+        title: "Grimms Manga",
+        url: "https://manganelo.com/manga/grimms_manga",
+      },
+      { title: "Groupie", url: "https://manganelo.com/manga/groupie" },
+      {
+        title: "Gun Blaze West",
+        url: "https://manganelo.com/manga/read_gun_blaze_west_manga_online",
+      },
+      { title: "Gunhed", url: "https://manganelo.com/manga/gunhed" },
+      {
+        title: "Gurechawanaidene",
+        url: "https://manganelo.com/manga/gurechawanaidene",
+      },
+      { title: "Gurenki", url: "https://manganelo.com/manga/gurenki" },
+      {
+        title: "Samurai Usagi",
+        url: "https://manganelo.com/manga/samurai_usagi",
+      },
+      {
+        title: "Gyagu Manga Biyori",
+        url: "https://manganelo.com/manga/gyagu_manga_biyori",
+      },
+      { title: "Gururi", url: "https://manganelo.com/manga/gururi" },
+      {
+        title: "Gyakkyou Nine",
+        url: "https://manganelo.com/manga/gyakkyou_nine",
+      },
+      {
+        title: "Gyarugewe no Sekai yo, Youkoso!",
+        url: "https://manganelo.com/manga/gyarugewe_no_sekai_yo_youkoso",
+      },
+      { title: "H2 Love", url: "https://manganelo.com/manga/h2_love_2" },
+      { title: "H^2 Love", url: "https://manganelo.com/manga/h2_love" },
+      { title: ":REverSAL", url: "https://manganelo.com/manga/reversal" },
       { title: "Haa Haa", url: "https://manganelo.com/manga/haa_haa" },
       { title: "...Curtain", url: "https://manganelo.com/manga/curtain" },
       {
@@ -4379,54 +4429,6 @@ export default {
       {
         title: "Hachimitsu Ouji wa Shitsuji ni Madou",
         url: "https://manganelo.com/manga/hachimitsu_ouji_wa_shitsuji_ni_madou",
-      },
-      {
-        title: "...Virgin Love.",
-        url: "https://manganelo.com/manga/virgin_love",
-      },
-      { title: ".hack//4koma", url: "https://manganelo.com/manga/hack4koma" },
-      { title: ".hack//Alcor", url: "https://manganelo.com/manga/hackalcor" },
-      {
-        title: "Hachiue no Juunin",
-        url: "https://manganelo.com/manga/hachiue_no_juunin",
-      },
-      { title: ".hack//G.U.+", url: "https://manganelo.com/manga/hackgu" },
-      {
-        title: "Hada made Aishite",
-        url: "https://manganelo.com/manga/hada_made_aishite",
-      },
-      {
-        title: "Hada no Ue no Renai Jijou",
-        url: "https://manganelo.com/manga/hada_no_ue_no_renai_jijou",
-      },
-      {
-        title: "Hagakure no Koi",
-        url: "https://manganelo.com/manga/hagakure_no_koi",
-      },
-      { title: ".hack//Link", url: "https://manganelo.com/manga/hacklink" },
-      { title: "Hagane", url: "https://manganelo.com/manga/hagane" },
-      {
-        title: "",
-        url: "https://manganelo.com/manga/bungaku_shoujo_to_ue_kawaku_yuurei",
-      },
-      {
-        title: "'Hajimete' Ageru!",
-        url: "https://manganelo.com/manga/hajimete_ageru",
-      },
-      { title: "", url: "https://manganelo.com/manga/gokko" },
-      { title: "(G) Edition", url: "https://manganelo.com/manga/g_edition" },
-      {
-        title: "Haginokouji Seiya-sama no Ran",
-        url: "https://manganelo.com/manga/haginokouji_seiyasama_no_ran",
-      },
-      {
-        title: "Hagure Yuusha no Kichiku Bigaku",
-        url: "https://manganelo.com/manga/hagure_yuusha_no_kichiku_bigaku",
-      },
-      { title: "[Switch]", url: "https://manganelo.com/manga/switch" },
-      {
-        title: "Hai to Diamond",
-        url: "https://manganelo.com/manga/hai_to_diamond",
       },
     ],
     entries: [
