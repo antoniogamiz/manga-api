@@ -5,3 +5,4 @@ entidad:
   - src/parsers/manganelo.ts
   - src/types/manga.ts
   - src/types/parser.ts
+URL: https://manga-api-zeta.vercel.app/api/mangas/xtbw261401566264968/
