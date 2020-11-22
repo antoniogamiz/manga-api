@@ -4318,6 +4318,15 @@ export default {
       genres: ["Drama", "Romance"],
       chapterEntries: [
         {
+          url: "https://manganelo.com/chapter/hz924551/chapter_5",
+        },
+        {
+          url: "https://manganelo.com/chapter/hz924551/chapter_4",
+        },
+        {
+          url: "https://manganelo.com/chapter/hz924551/chapter_3",
+        },
+        {
           url: "https://manganelo.com/chapter/hz924551/chapter_2",
         },
         {
