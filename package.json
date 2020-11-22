@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/antoniogamiz/manga-api#readme",
   "dependencies": {
-    "node-telegram-bot-api": "^0.50.0",
-    "superagent": "^6.1.0"
+    "node-fetch": "^2.6.1",
+    "telegraf": "^3.38.0"
   }
 }
