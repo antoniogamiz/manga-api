@@ -3,5 +3,11 @@
         "api/**/*.[jt]s": {
             "runtime": "vercel-deno@0.7.5"
         }
-    }
+    },
+    "rewrites": [
+        {
+            "source": "/api/(.*)",
+            "destination": "/api/manga-api.ts"
+        }
+    ]
 }
