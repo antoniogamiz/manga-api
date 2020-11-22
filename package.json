@@ -1,0 +1,27 @@
+{
+  "name": "manga-api",
+  "version": "1.0.0",
+  "description": "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) ![Documentation](https://github.com/antoniogamiz/manga-api/workflows/Documentation/badge.svg) ![Tests CI](https://github.com/antoniogamiz/manga-api/workflows/Tests/badge.svg) [![Build Status](https://travis-ci.com/antoniogamiz/manga-api.svg?branch=master)](https://travis-ci.com/antoniogamiz/manga-api)",
+  "main": "typedoc.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antoniogamiz/manga-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antoniogamiz/manga-api/issues"
+  },
+  "homepage": "https://github.com/antoniogamiz/manga-api#readme",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.50.0",
+    "superagent": "^6.1.0"
+  }
+}
