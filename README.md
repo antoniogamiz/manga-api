@@ -35,6 +35,16 @@ git clone https://github.com/antoniogamiz/manga-api
 
 Nota: necesitas tener instalado [velociraptor](https://github.com/umbopepato/velociraptor).
 
+## Serverless API
+
+La API también se encuentra desplegada en Vercel, usando funciones serverless. Puede consultar más información [aquí](docs/serverless.md).
+
+- API: https://manga-api-zeta.vercel.app/api
+
+## Telegram Bot
+
+La API puede ser consultada mediante un bot de Telegram llamado `MangaAPI`, para consultar más información mira [aquí](docs/bot.md).
+
 ## Docker
 
 He creado un contenedor de [Docker Hub](https://hub.docker.com/repository/docker/antoniogamiz/manga-api) que contiene Deno y las dependencias necesarias para ejecutar los tests y la aplicación (como Velociraptor, por ejemplo). El Dockerfile usado puede ser consultado [aquí](./Dockerfile).
