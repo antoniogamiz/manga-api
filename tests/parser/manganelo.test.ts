@@ -1,5 +1,6 @@
 // @ts-ignore deno-lint-ignore
 import { ManganeloParser, ROW_HEADERS } from "../../src/parsers/index.ts";
+
 // @ts-ignore deno-lint-ignore
 import fetchPage from "../../src/utils/http.ts";
 import {
@@ -41,13 +42,13 @@ for (let i = 0; i < spec.mangas.length; i++) {
   Deno.test(`Spec case ${i}: row indexes`, async () => {
     const html: string = await fetchPage(spec.mangas[i].url);
     let index: number = parser.findCorrectIndex(
-      ROW_HEADERS.alternativeTitles,
+      ManganeloParser.ROW_HEADERS.alternativeTitles,
       html
     );
     assertEquals(index, spec.mangas[i].indexes.alternativeTitles);
-    index = parser.findCorrectIndex(ROW_HEADERS.status, html);
+    index = parser.findCorrectIndex(ManganeloParser.ROW_HEADERS.status, html);
     assertEquals(index, spec.mangas[i].indexes.status);
-    index = parser.findCorrectIndex(ROW_HEADERS.genres, html);
+    index = parser.findCorrectIndex(ManganeloParser.ROW_HEADERS.genres, html);
     assertEquals(index, spec.mangas[i].indexes.genres);
   });
 

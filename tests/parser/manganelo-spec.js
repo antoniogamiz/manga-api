@@ -4318,6 +4318,18 @@ export default {
       genres: ["Drama", "Romance"],
       chapterEntries: [
         {
+          url: "https://manganelo.com/chapter/hz924551/chapter_9",
+        },
+        {
+          url: "https://manganelo.com/chapter/hz924551/chapter_8",
+        },
+        {
+          url: "https://manganelo.com/chapter/hz924551/chapter_7",
+        },
+        {
+          url: "https://manganelo.com/chapter/hz924551/chapter_6",
+        },
+        {
           url: "https://manganelo.com/chapter/hz924551/chapter_5",
         },
         {
@@ -4500,12 +4512,12 @@ export default {
         url: "https://manganelo.com/manga/the_breaker_new_waves",
       },
       {
-        title: "Tokyo Ghoul:re",
-        url: "https://manganelo.com/manga/read_tokyo_ghoulre",
-      },
-      {
         title: "Tokyo Ghoul",
         url: "https://manganelo.com/manga/read_tokyo_ghoul_manga_online_free4",
+      },
+      {
+        title: "Tokyo Ghoul:re",
+        url: "https://manganelo.com/manga/read_tokyo_ghoulre",
       },
       {
         title: "Cohabitation!",
@@ -4516,21 +4528,21 @@ export default {
         url: "https://manganelo.com/manga/saotome_girl_hitakakusu",
       },
       {
-        title: "New Grappler Baki",
-        url: "https://manganelo.com/manga/new_grappler_baki",
-      },
-      {
         title: "Dragon Ball",
         url:
           "https://manganelo.com/manga/read_dragon_ball_manga_online_for_free2",
       },
       {
-        title: "Blood Bank",
-        url: "https://manganelo.com/manga/blood_bank",
+        title: "New Grappler Baki",
+        url: "https://manganelo.com/manga/new_grappler_baki",
       },
       {
         title: "Beelzebub",
         url: "https://manganelo.com/manga/vhkm45881569205313",
+      },
+      {
+        title: "Blood Bank",
+        url: "https://manganelo.com/manga/blood_bank",
       },
       {
         title: "Ishuzoku Reviewers",

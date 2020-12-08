@@ -19,13 +19,15 @@ import { cheerio } from "../deps.ts";
  * Parse for the [Manganelo](https://manganelo.com/) manga site.
  */
 
-export const enum ROW_HEADERS {
+enum ROW_HEADERS {
   alternativeTitles = "Alternative",
   status = "Status",
   genres = "Genres",
 }
 
 export class ManganeloParser implements MangaParser {
+  static ROW_HEADERS = ROW_HEADERS;
+
   parse(html: string): ParsingResult<Manga> {
     const title = this.parseTitle(html);
     const alternativeTitles = this.parseAlternativeTitles(html);

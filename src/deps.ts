@@ -4,7 +4,7 @@ export {
   assertThrowsAsync, // @ts-ignore deno-lint-ignore
 } from "https://deno.land/std@0.80.0/testing/asserts.ts";
 
-export { ServerReqyest } from "https://deno.land/std@0.80.0/http/server.ts";
+export { ServerRequest } from "https://deno.land/std@0.80.0/http/server.ts";
 
 // @deno-types="https://cdn.jsdelivr.net/gh/justjavac/deno_cheerio/cheerio.d.ts"
 import cheerio from "https://dev.jspm.io/cheerio/index.js";
