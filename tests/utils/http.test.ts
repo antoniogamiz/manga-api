@@ -10,6 +10,6 @@ Deno.test("Bad fetch try", async function (): Promise<void> {
   await assertThrowsAsync(
     async (): Promise<void> => {
       await fetchPage("badFormedURL");
-    },
+    }
   );
 });

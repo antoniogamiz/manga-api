@@ -1,5 +1,4 @@
-import { ServerRequest } from "https://deno.land/std@0.73.0/http/server.ts";
-import { Response } from "../src/deps.ts";
+import { ServerRequest } from "../src/deps.ts";
 
 import app from "../src/app.ts";
 

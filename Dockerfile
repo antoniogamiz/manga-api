@@ -12,7 +12,7 @@ USER deno
 WORKDIR /home/deno
 
 # instalamos el task runner
-RUN deno install -qA -n vr https://deno.land/x/velociraptor@1.0.0-beta.15/cli.ts
+RUN deno install -qA -n vr https://deno.land/x/velociraptor@1.0.0-beta.16/cli.ts
 
 # cacheamos las dependencias
 ADD src/deps.ts .
