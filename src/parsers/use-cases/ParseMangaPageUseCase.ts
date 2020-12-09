@@ -2,23 +2,61 @@
 import { Injectable, cheerio } from "../../deps.ts";
 
 import { ParseMangaPageUseCaseInterface } from "../interfaces/use-cases/index.ts";
-import { MangaEntity } from "../entities/index.ts";
-import { Genre, Status } from "../enums/index.ts";
+import { MangaEntity, ChapterEntryEntity } from "../entities/index.ts";
+import {
+  Genre,
+  Status,
+  stringToGenre,
+  stringToStatus,
+} from "../enums/index.ts";
 import { HttpPageDataAccess } from "../data-access/index.ts";
 import { ParsingResult } from "../utils/index.ts";
 import { ParsingError } from "../errors/index.ts";
 
+enum ROW_HEADERS {
+  alternativeTitles = "Alternative",
+  status = "Status",
+  genres = "Genres",
+}
+
 @Injectable({ isSingleton: false })
 export class ParseMangaPageUseCase implements ParseMangaPageUseCaseInterface {
   html: string;
+  parsingResult: ParsingResult<MangaEntity>;
+  static ROW_HEADERS = ROW_HEADERS;
   constructor(public readonly httpPageDataAccess: HttpPageDataAccess) {}
 
   async run(url: string) {
     this.html = await this.httpPageDataAccess.get(url);
+
+    const title = this.parseTitle();
+    const alternativeTitles = this.parseAlternativeTitles();
+    const status = this.parseStatus();
+    const genres = this.parseGenres();
+    const chaptersEntries = this.parseChapters();
+
+    const firstErrorInParsing =
+      title.error ||
+      alternativeTitles.error ||
+      status.error ||
+      genres.error ||
+      chaptersEntries.error;
+
+    this.parsingResult = {
+      error: firstErrorInParsing,
+      result: {
+        title: title.result,
+        alternativeTitles: alternativeTitles.result,
+        status: status.result,
+        genres: genres.result,
+        chapters: [],
+        chapterEntries: chaptersEntries.result,
+      },
+    };
   }
 
   getResults() {
-    return new MangaEntity("", [], Status.COMPLETED, [], [], []);
+    return this.parsingResult;
   }
 
   parseTitle(): ParsingResult<string> {
@@ -31,141 +69,87 @@ export class ParseMangaPageUseCase implements ParseMangaPageUseCaseInterface {
     }
     return parsingResult;
   }
+
+  parseAlternativeTitles(): ParsingResult<string[]> {
+    const $ = cheerio.load(this.html);
+    const parsingResult: ParsingResult<string[]> = { result: [] };
+
+    const rowIndex = this.findCorrectIndex(ROW_HEADERS.alternativeTitles);
+    if (rowIndex === -1) return parsingResult;
+
+    const alternativeTitles = $(
+      `.variations-tableInfo tbody tr:nth-child(${rowIndex}) td:nth-child(2) h2`
+    )
+      .text()
+      .split(";")
+      .filter(Boolean)
+      .map((e: string) => e.trim());
+
+    parsingResult.result = alternativeTitles;
+    if (!alternativeTitles)
+      parsingResult.error = new ParsingError("Alternitve Titles");
+
+    return parsingResult;
+  }
+
+  parseStatus(): ParsingResult<Status> {
+    const $ = cheerio.load(this.html);
+    const rowIndex = this.findCorrectIndex(ROW_HEADERS.status);
+    const statusText = $(
+      `.variations-tableInfo tbody tr:nth-child(${rowIndex}) td:nth-child(2)`
+    ).text();
+    const status = stringToStatus(statusText);
+
+    const parsingResult: ParsingResult<Status> = { result: status };
+    if (!status) {
+      parsingResult.error = new ParsingError("Status");
+    }
+
+    return parsingResult;
+  }
+
+  parseGenres(): ParsingResult<Genre[]> {
+    const $ = cheerio.load(this.html);
+    const rowIndex = this.findCorrectIndex(ROW_HEADERS.genres);
+    const genres = $(
+      `.variations-tableInfo tbody tr:nth-child(${rowIndex}) td:nth-child(2) a`
+    )
+      .map((i: number, e: CheerioElement) => $(e).text())
+      .get()
+      .map((g: string) => stringToGenre(g));
+
+    const parsingResult: ParsingResult<Genre[]> = { result: genres };
+    if (!genres) {
+      parsingResult.error = new ParsingError("Genres");
+    }
+
+    return parsingResult;
+  }
+
+  parseChapters(): ParsingResult<ChapterEntryEntity[]> {
+    const $ = cheerio.load(this.html);
+    const chapters = $(".row-content-chapter .a-h .chapter-name")
+      .map((i: number, e: CheerioElement) => ({ url: $(e).attr("href") }))
+      .get();
+
+    const parsingResult: ParsingResult<ChapterEntryEntity[]> = {
+      result: chapters,
+    };
+    if (!chapters) {
+      parsingResult.error = new ParsingError("Chapters");
+    }
+
+    return parsingResult;
+  }
+
+  findCorrectIndex(header: ROW_HEADERS): number {
+    const $ = cheerio.load(this.html);
+    for (let i = 0; i < 5; i++) {
+      const rowTitle = $(
+        `.variations-tableInfo tbody tr:nth-child(${i}) td:nth-child(1)`
+      ).text();
+      if (rowTitle.includes(header)) return i;
+    }
+    return -1;
+  }
 }
-
-// /**
-//  * Parse for the [Manganelo](https://manganelo.com/) manga site.
-//  */
-
-// enum ROW_HEADERS {
-//   alternativeTitles = "Alternative",
-//   status = "Status",
-//   genres = "Genres",
-// }
-
-// export class ManganeloParser implements MangaParser {
-//   static ROW_HEADERS = ROW_HEADERS;
-
-//   parse(html: string): ParsingResult<Manga> {
-//     const title = this.parseTitle(html);
-//     const alternativeTitles = this.parseAlternativeTitles(html);
-//     const status = this.parseStatus(html);
-//     const genres = this.parseGenres(html);
-//     const chaptersEntries = this.parseChapters(html);
-
-//     const firstErrorInParsing =
-//       title.error ||
-//       alternativeTitles.error ||
-//       status.error ||
-//       genres.error ||
-//       chaptersEntries.error;
-
-//     return {
-//       data: {
-//         title: title.data,
-//         alternativeTitles: alternativeTitles.data,
-//         status: status.data,
-//         genres: genres.data,
-//         chapters: [],
-//         chapterEntries: chaptersEntries.data,
-//       },
-//       error: firstErrorInParsing,
-//     };
-//   }
-
-//   parseTitle(html: string): ParsingResult<string> {
-//     const $ = cheerio.load(html);
-//     const title = $("h1").text();
-//     const error = title ? undefined : new ParsingError("Title");
-//     return { data: title, error };
-//   }
-
-//   parseAlternativeTitles(html: string): ParsingResult<string[]> {
-//     const $ = cheerio.load(html);
-//     const rowIndex = this.findCorrectIndex(ROW_HEADERS.alternativeTitles, html);
-//     if (rowIndex === -1) return { data: [] };
-//     const alternativeTitles = $(
-//       `.variations-tableInfo tbody tr:nth-child(${rowIndex}) td:nth-child(2) h2`
-//     )
-//       .text()
-//       .split(";")
-//       .filter(Boolean)
-//       .map((e: string) => e.trim());
-//     const error = alternativeTitles
-//       ? undefined
-//       : new ParsingError("Alternitve Titles");
-//     return { data: alternativeTitles, error };
-//   }
-//   parseStatus(html: string): ParsingResult<Status> {
-//     const $ = cheerio.load(html);
-//     const rowIndex = this.findCorrectIndex(ROW_HEADERS.status, html);
-//     const statusText = $(
-//       `.variations-tableInfo tbody tr:nth-child(${rowIndex}) td:nth-child(2)`
-//     ).text();
-//     const status = Status[(statusText as unknown) as keyof typeof Status];
-//     const error = status ? undefined : new ParsingError("Status");
-//     return { data: status, error };
-//   }
-
-//   parseGenres(html: string): ParsingResult<Genre[]> {
-//     const $ = cheerio.load(html);
-//     const rowIndex = this.findCorrectIndex(ROW_HEADERS.genres, html);
-//     const genres = $(
-//       `.variations-tableInfo tbody tr:nth-child(${rowIndex}) td:nth-child(2) a`
-//     )
-//       .map((i: number, e: CheerioElement) => $(e).text())
-//       .get()
-//       .map((g: Genre) => Genre[(g as unknown) as keyof typeof Genre]);
-//     const error = genres ? undefined : new ParsingError("Genres");
-//     return { data: genres, error };
-//   }
-
-//   parseChapters(html: string): ParsingResult<ChapterEntry[]> {
-//     const $ = cheerio.load(html);
-//     const chapters = $(".row-content-chapter .a-h .chapter-name")
-//       .map((i: number, e: CheerioElement) => ({ url: $(e).attr("href") }))
-//       .get();
-//     const error = chapters ? undefined : new ParsingError("Genres");
-//     return { data: chapters, error };
-//   }
-
-//   parseChapter(html: string): ParsingResult<Chapter> {
-//     const $ = cheerio.load(html);
-//     const chapters = $(".container-chapter-reader")
-//       .contents()
-//       .map((i: number, e: cheerio) => $(e).attr("src"))
-//       .get();
-//     const chapter: Chapter = {
-//       title: $("h1").text(),
-//       chapterPages: chapters.map((url: string) => ({ url: url })),
-//     };
-
-//     const error =
-//       chapter.title && chapter.chapterPages
-//         ? undefined
-//         : new ParsingError(`Chapter(${chapter.title})`);
-//     return { data: chapter, error };
-//   }
-
-//   parseMangaList(html: string): ParsingResult<MangaListEntry[]> {
-//     const $ = cheerio.load(html);
-//     const entries = $(".panel-content-genres .content-genres-item > a")
-//       .map((i: number, e: cheerio) => ({
-//         title: $(e).attr("title"),
-//         url: $(e).attr("href"),
-//       }))
-//       .get();
-//     return { data: entries };
-//   }
-
-//   findCorrectIndex(header: ROW_HEADERS, html: string): number {
-//     const $ = cheerio.load(html);
-//     for (let i = 0; i < 5; i++) {
-//       const rowTitle = $(
-//         `.variations-tableInfo tbody tr:nth-child(${i}) td:nth-child(1)`
-//       ).text();
-//       if (rowTitle.includes(header)) return i;
-//     }
-//     return -1;
-//   }
-// }

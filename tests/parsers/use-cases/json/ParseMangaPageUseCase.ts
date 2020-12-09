@@ -17,8 +17,8 @@ export const expected = {
     "Đảo Hải Tặc (Vietnamese - Tiếng Việt - TV)",
     "วันพีซ (Thai)",
   ],
-  status: "Ongoing",
-  genres: ["Action", "Adventure", "Comedy", "Drama", "Fantasy", "Shounen"],
+  status: "ONGOING",
+  genres: ["ACTION", "ADVENTURE", "COMEDY", "DRAMA", "FANTASY", "SHOUNEN"],
   chapterEntries: [
     {
       url:

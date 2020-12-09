@@ -9,6 +9,6 @@ export class MangaEntity {
     public status: Status,
     public genres: Genre[],
     public chapters: ChapterEntity[],
-    public publicchapterEntries: ChapterEntryEntity[]
+    public chapterEntries: ChapterEntryEntity[]
   ) {}
 }
