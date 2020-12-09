@@ -24,6 +24,7 @@ export class ParseMangaPageUseCase implements ParseMangaPageUseCaseInterface {
   html: string;
   parsingResult: ParsingResult<MangaEntity>;
   static ROW_HEADERS = ROW_HEADERS;
+
   constructor(public readonly httpPageDataAccess: HttpPageDataAccess) {}
 
   async run(url: string) {
