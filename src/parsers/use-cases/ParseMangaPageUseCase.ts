@@ -9,6 +9,6 @@ export class ParseMangaPageUseCase implements ParseMangaPageUseCaseInterface {
   constructor(private readonly httpPageDataAccess: HttpPageDataAccess) {}
   run(html: string) {}
   getResults() {
-    return new MangaEntity("", [], Status.Completed, [], [], []);
+    return new MangaEntity("", [], Status.COMPLETED, [], [], []);
   }
 }
