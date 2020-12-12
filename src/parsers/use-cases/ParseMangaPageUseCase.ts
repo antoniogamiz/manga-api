@@ -9,7 +9,7 @@ import {
   stringToGenre,
   stringToStatus,
 } from "../enums/index.ts";
-import { HttpPageDataAccess } from "../data-access/index.ts";
+import { HttpPageDataAccess } from "../repositories/index.ts";
 import { ParsingResult } from "../utils/index.ts";
 import { ParsingError } from "../errors/index.ts";
 

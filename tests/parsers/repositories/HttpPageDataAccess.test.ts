@@ -1,4 +1,4 @@
-import { HttpPageDataAccess } from "../../../src/parsers/data-access/index.ts";
+import { HttpPageDataAccess } from "../../../src/parsers/repositories/index.ts";
 
 import { assert, assertThrowsAsync } from "../../../src/deps.ts";
 

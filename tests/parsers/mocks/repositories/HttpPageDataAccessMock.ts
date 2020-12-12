@@ -1,6 +1,6 @@
 import { Injectable, bootstrap } from "../../../../src/deps.ts";
-import { HttpPageDataAccessInterface } from "../../../../src/parsers/interfaces/data-access/HttpPageDataAccessInterface.ts";
-import { HttpPageDataAccess } from "../../../../src/parsers/data-access/HttpPageDataAccess.ts";
+import { HttpPageDataAccessInterface } from "../../../../src/parsers/interfaces/repositories/HttpPageDataAccessInterface.ts";
+import { HttpPageDataAccess } from "../../../../src/parsers/repositories/HttpPageDataAccess.ts";
 
 // deno-lint-ignore no-explicit-any
 export const HttpPageDataAccessMock = (classDefinition: any, html: string) => {

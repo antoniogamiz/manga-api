@@ -5,7 +5,7 @@ import { MangaListEntryEntity } from "../entities/index.ts";
 import { ParseMangaListPageUseCaseInterface } from "../interfaces/use-cases/index.ts";
 import { ParsingResult } from "../utils/index.ts";
 import { ParsingError } from "../errors/index.ts";
-import { HttpPageDataAccess } from "../data-access/index.ts";
+import { HttpPageDataAccess } from "../repositories/index.ts";
 import { Injectable } from "https://deno.land/x/inject@v0.1.1/decorators.ts";
 
 @Injectable({ isSingleton: false })
