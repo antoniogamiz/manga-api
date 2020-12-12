@@ -1,3 +1,5 @@
+import { ObjectFactory } from "../../modules/common/factories/ObjectFactory.ts";
+
 import {
   MangaListEntryEntity,
   MangaByRequest,
@@ -11,9 +13,13 @@ import { isParsingError, ParsingResult } from "../utils/index.ts";
 import { MANGA_URL } from "../../Settings.ts";
 
 export class GetMangaByController implements GetMangaByControllerInterface {
-  constructor(
-    public readonly parseMangaListPageUseCase: ParseMangaListPageUseCaseInterface
-  ) {}
+  parseMangaListPageUseCase: ParseMangaListPageUseCaseInterface;
+
+  constructor() {
+    this.parseMangaListPageUseCase = ObjectFactory.getInstance<ParseMangaListPageUseCaseInterface>(
+      "ParseMangaListPageUseCaseInterface"
+    );
+  }
 
   async run(request: MangaByRequest): Promise<MangaByResponse> {
     const { genre, status } = request;
@@ -52,8 +58,3 @@ export class GetMangaByController implements GetMangaByControllerInterface {
     return `${MANGA_URL}${uri}`;
   }
 }
-
-export const makeGetMangaByController = (
-  parseMangaListPageUseCase: ParseMangaListPageUseCaseInterface
-): GetMangaByControllerInterface =>
-  new GetMangaByController(parseMangaListPageUseCase);

@@ -1,6 +1,7 @@
+import { ObjectFactory } from "../../modules/common/factories/ObjectFactory.ts";
+
 // @ts-ignore deno-lint-ignore
 import { cheerio } from "../../deps.ts";
-
 import { ParseMangaPageUseCaseInterface } from "../interfaces/use-cases/index.ts";
 import { MangaEntity, ChapterEntryEntity } from "../entities/index.ts";
 import {
@@ -23,10 +24,13 @@ export class ParseMangaPageUseCase implements ParseMangaPageUseCaseInterface {
   html: string;
   parsingResult: ParsingResult<MangaEntity>;
   static ROW_HEADERS = ROW_HEADERS;
+  httpPageDataAccess: HttpPageDataAccessInterface;
 
-  constructor(
-    public readonly httpPageDataAccess: HttpPageDataAccessInterface
-  ) {}
+  constructor() {
+    this.httpPageDataAccess = ObjectFactory.getInstance<HttpPageDataAccessInterface>(
+      "HttpPageDataAccessInterface"
+    );
+  }
 
   async run(url: string) {
     this.html = await this.httpPageDataAccess.get(url, 3);
@@ -158,8 +162,3 @@ export class ParseMangaPageUseCase implements ParseMangaPageUseCaseInterface {
     return -1;
   }
 }
-
-export const makeParseMangaPageUseCase = (
-  httpPageDataAccess: HttpPageDataAccessInterface
-): ParseMangaPageUseCaseInterface =>
-  new ParseMangaPageUseCase(httpPageDataAccess);

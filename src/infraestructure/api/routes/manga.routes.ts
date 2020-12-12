@@ -1,21 +1,17 @@
+import { ObjectFactory } from "../../../modules/common/factories/ObjectFactory.ts";
+
 import { Response, Context } from "../../../deps.ts";
 import { stringToGenre, stringToStatus } from "../../../parsers/enums/index.ts";
 import {
-  makeGetMangaController,
-  makeGetChapterController,
-  makeGetMangaByController,
-} from "../../../parsers/controllers/index.ts";
-import { HttpPageDataAccess } from "../../../parsers/repositories/index.ts";
+  GetChapterControllerInterface,
+  GetMangaByControllerInterface,
+  GetMangaControllerInterface,
+} from "../../../parsers/interfaces/index.ts";
 import {
   ChapterRequest,
   MangaRequest,
   MangaByRequest,
 } from "../../../parsers/entities/index.ts";
-import {
-  ParseMangaPageUseCase,
-  ParseChapterPageUseCase,
-  ParseMangaListPageUseCase,
-} from "../../../parsers/use-cases/index.ts";
 
 export const getManga = async ({
   params,
@@ -25,8 +21,8 @@ export const getManga = async ({
   response: Response;
 }) => {
   const { mangaId } = params;
-  const getMangaPageController = makeGetMangaController(
-    new ParseMangaPageUseCase(new HttpPageDataAccess())
+  const getMangaPageController = ObjectFactory.getInstance<GetMangaControllerInterface>(
+    "GetMangaControllerInterface"
   );
 
   const request = new MangaRequest(mangaId);
@@ -45,8 +41,8 @@ export const getChapter = async ({
   response: Response;
 }) => {
   const { mangaId, chapterId } = params;
-  const getChapterPageController = makeGetChapterController(
-    new ParseChapterPageUseCase(new HttpPageDataAccess())
+  const getChapterPageController = ObjectFactory.getInstance<GetChapterControllerInterface>(
+    "GetChapterControllerInterface"
   );
 
   const request = new ChapterRequest(mangaId, chapterId);
@@ -65,8 +61,8 @@ export const getMangaBy = async (ctx: Context) => {
   if (genreParameter) genre = stringToGenre(genreParameter);
   if (statusParameter) status = stringToStatus(statusParameter);
 
-  const getMangaPageController = makeGetMangaByController(
-    new ParseMangaListPageUseCase(new HttpPageDataAccess())
+  const getMangaPageController = ObjectFactory.getInstance<GetMangaByControllerInterface>(
+    "GetMangaByControllerInterface"
   );
 
   const request = new MangaByRequest();

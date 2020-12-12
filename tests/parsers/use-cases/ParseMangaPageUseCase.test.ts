@@ -1,17 +1,11 @@
 import { assertEquals } from "../../../src/deps.ts";
-import {
-  makeParseMangaPageUseCase,
-  ParseMangaPageUseCase,
-} from "../../../src/parsers/use-cases/index.ts";
-import { HttpPageDataAccess } from "../../../src/parsers/repositories/index.ts";
+import { ParseMangaPageUseCase } from "../../../src/parsers/use-cases/index.ts";
 import { expected } from "./json/ParseMangaPageUseCase.ts";
-
-const parseMangaPageUseCase = new ParseMangaPageUseCase(
-  new HttpPageDataAccess()
-);
 
 Deno.test("Should return the title of a manga", async () => {
   const { url, title } = expected;
+  const parseMangaPageUseCase = new ParseMangaPageUseCase();
+
   await parseMangaPageUseCase.run(url);
   const result = parseMangaPageUseCase.parseTitle();
 
@@ -20,6 +14,8 @@ Deno.test("Should return the title of a manga", async () => {
 
 Deno.test("Should return the alternative title of a manga", async () => {
   const { url, alternativeTitles } = expected;
+  const parseMangaPageUseCase = new ParseMangaPageUseCase();
+
   await parseMangaPageUseCase.run(url);
   const result = parseMangaPageUseCase.parseAlternativeTitles();
 
@@ -28,6 +24,8 @@ Deno.test("Should return the alternative title of a manga", async () => {
 
 Deno.test("Should return the status of a manga", async () => {
   const { url, status } = expected;
+  const parseMangaPageUseCase = new ParseMangaPageUseCase();
+
   await parseMangaPageUseCase.run(url);
   const result = parseMangaPageUseCase.parseStatus();
 
@@ -36,6 +34,8 @@ Deno.test("Should return the status of a manga", async () => {
 
 Deno.test("Should return the genres of a manga", async () => {
   const { url, genres } = expected;
+  const parseMangaPageUseCase = new ParseMangaPageUseCase();
+
   await parseMangaPageUseCase.run(url);
   const result = parseMangaPageUseCase.parseGenres();
 
@@ -44,6 +44,8 @@ Deno.test("Should return the genres of a manga", async () => {
 
 Deno.test("Should return the chapters entries of a manga", async () => {
   const { url, chapterEntries } = expected;
+  const parseMangaPageUseCase = new ParseMangaPageUseCase();
+
   await parseMangaPageUseCase.run(url);
   const result = parseMangaPageUseCase.parseChapters();
 
@@ -59,9 +61,8 @@ Deno.test("Should return a parsed manga", async () => {
     status,
     chapterEntries,
   } = expected;
-  const parseMangaPageUseCase = makeParseMangaPageUseCase(
-    new HttpPageDataAccess()
-  );
+  const parseMangaPageUseCase = new ParseMangaPageUseCase();
+
   await parseMangaPageUseCase.run(url);
   const result = parseMangaPageUseCase.getResults();
 

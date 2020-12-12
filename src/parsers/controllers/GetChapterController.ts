@@ -1,3 +1,5 @@
+import { ObjectFactory } from "../../modules/common/factories/ObjectFactory.ts";
+
 import {
   ChapterEntity,
   ChapterRequest,
@@ -9,9 +11,12 @@ import { isParsingError, ParsingResult } from "../utils/index.ts";
 import { MANGA_URL } from "../../Settings.ts";
 
 export class GetChapterController implements GetChapterControllerInterface {
-  constructor(
-    public readonly parseChapterPageUseCase: ParseChapterPageUseCaseInterface
-  ) {}
+  parseChapterPageUseCase: ParseChapterPageUseCaseInterface;
+  constructor() {
+    this.parseChapterPageUseCase = ObjectFactory.getInstance<ParseChapterPageUseCaseInterface>(
+      "ParseChapterPageUseCaseInterface"
+    );
+  }
 
   async run(request: ChapterRequest): Promise<ChapterResponse> {
     const { mangaId, chapterId } = request;
@@ -32,8 +37,3 @@ export class GetChapterController implements GetChapterControllerInterface {
     };
   }
 }
-
-export const makeGetChapterController = (
-  parseChapterPageUseCase: ParseChapterPageUseCaseInterface
-): GetChapterControllerInterface =>
-  new GetChapterController(parseChapterPageUseCase);

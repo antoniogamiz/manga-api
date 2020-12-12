@@ -1,12 +1,13 @@
+import { ObjectFactory } from "../../../src/modules/common/factories/ObjectFactory.ts";
+
 import { assertEquals } from "../../../src/deps.ts";
-import { makeGetMangaByController } from "../../../src/parsers/controllers/index.ts";
 import { Status, Genre } from "../../../src/parsers/enums/index.ts";
 import { ParsingError } from "../../../src/parsers/errors/index.ts";
+import { GetMangaByController } from "../../../src/parsers/controllers/index.ts";
 
 Deno.test("Should return a MangaByResponse", async () => {
-  const parseChapterPageUseCase = makeGetMangaByController(
-    mockParseMangaListPageUseCase()
-  );
+  mockParseMangaListPageUseCase();
+  const parseChapterPageUseCase = new GetMangaByController();
 
   const response = await parseChapterPageUseCase.run({
     status: Status.COMPLETED,
@@ -17,9 +18,8 @@ Deno.test("Should return a MangaByResponse", async () => {
 });
 
 Deno.test("Should return a bad request error", async () => {
-  const parseChapterPageUseCase = makeGetMangaByController(
-    mockParseMangaListPageUseCaseWithError()
-  );
+  mockParseMangaListPageUseCaseWithError();
+  const parseChapterPageUseCase = new GetMangaByController();
 
   const response = await parseChapterPageUseCase.run({
     status: Status.COMPLETED,
@@ -30,15 +30,20 @@ Deno.test("Should return a bad request error", async () => {
 });
 
 const mockParseMangaListPageUseCase = () => {
-  return {
+  ObjectFactory.mockWithInstance("ParseMangaListPageUseCaseInterface", {
     run: () => {},
-    getResults: () => [{ title: "mocked", url: "mocked" }],
-  };
+    getResults: () => [
+      {
+        title: "mocked",
+        url: "mocked",
+      },
+    ],
+  });
 };
 
 const mockParseMangaListPageUseCaseWithError = () => {
-  return {
+  ObjectFactory.mockWithInstance("ParseMangaListPageUseCaseInterface", {
     run: () => {},
     getResults: () => new ParsingError("Title"),
-  };
+  });
 };
