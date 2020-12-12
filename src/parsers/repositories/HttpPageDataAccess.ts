@@ -1,7 +1,5 @@
-import { Injectable } from "../../deps.ts";
 import { HttpPageDataAccessInterface } from "../interfaces/index.ts";
 
-@Injectable()
 export class HttpPageDataAccess implements HttpPageDataAccessInterface {
   async get(url: string, retries = 3): Promise<string> {
     try {

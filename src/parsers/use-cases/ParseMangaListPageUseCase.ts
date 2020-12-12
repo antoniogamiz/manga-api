@@ -5,18 +5,18 @@ import { MangaListEntryEntity } from "../entities/index.ts";
 import { ParseMangaListPageUseCaseInterface } from "../interfaces/use-cases/index.ts";
 import { ParsingResult } from "../utils/index.ts";
 import { ParsingError } from "../errors/index.ts";
-import { HttpPageDataAccess } from "../repositories/index.ts";
-import { Injectable } from "https://deno.land/x/inject@v0.1.1/decorators.ts";
+import { HttpPageDataAccessInterface } from "../interfaces/repositories/index.ts";
 
-@Injectable({ isSingleton: false })
 export class ParseMangaListPageUseCase
   implements ParseMangaListPageUseCaseInterface {
   parsingResult: ParsingResult<MangaListEntryEntity>;
 
-  constructor(public readonly httpPageDataAccess: HttpPageDataAccess) {}
+  constructor(
+    public readonly httpPageDataAccess: HttpPageDataAccessInterface
+  ) {}
 
   async run(url: string) {
-    const html = await this.httpPageDataAccess.get(url);
+    const html = await this.httpPageDataAccess.get(url, 3);
     const $ = cheerio.load(html);
     const entries = $(".panel-content-genres .content-genres-item > a")
       .map((i: number, e: cheerio) => ({
@@ -34,3 +34,8 @@ export class ParseMangaListPageUseCase
     return this.parsingResult;
   }
 }
+
+export const makeParseMangaListPageUseCase = (
+  httpPageDataAccess: HttpPageDataAccessInterface
+): ParseMangaListPageUseCaseInterface =>
+  new ParseMangaListPageUseCase(httpPageDataAccess);

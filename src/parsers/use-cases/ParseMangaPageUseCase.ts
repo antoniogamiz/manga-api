@@ -1,5 +1,5 @@
 // @ts-ignore deno-lint-ignore
-import { Injectable, cheerio } from "../../deps.ts";
+import { cheerio } from "../../deps.ts";
 
 import { ParseMangaPageUseCaseInterface } from "../interfaces/use-cases/index.ts";
 import { MangaEntity, ChapterEntryEntity } from "../entities/index.ts";
@@ -9,7 +9,7 @@ import {
   stringToGenre,
   stringToStatus,
 } from "../enums/index.ts";
-import { HttpPageDataAccess } from "../repositories/index.ts";
+import { HttpPageDataAccessInterface } from "../interfaces/repositories/index.ts";
 import { ParsingResult } from "../utils/index.ts";
 import { ParsingError } from "../errors/index.ts";
 
@@ -19,16 +19,17 @@ enum ROW_HEADERS {
   genres = "Genres",
 }
 
-@Injectable({ isSingleton: false })
 export class ParseMangaPageUseCase implements ParseMangaPageUseCaseInterface {
   html: string;
   parsingResult: ParsingResult<MangaEntity>;
   static ROW_HEADERS = ROW_HEADERS;
 
-  constructor(public readonly httpPageDataAccess: HttpPageDataAccess) {}
+  constructor(
+    public readonly httpPageDataAccess: HttpPageDataAccessInterface
+  ) {}
 
   async run(url: string) {
-    this.html = await this.httpPageDataAccess.get(url);
+    this.html = await this.httpPageDataAccess.get(url, 3);
 
     const title = this.parseTitle();
     const alternativeTitles = this.parseAlternativeTitles();
@@ -154,3 +155,8 @@ export class ParseMangaPageUseCase implements ParseMangaPageUseCaseInterface {
     return -1;
   }
 }
+
+export const makeParseMangaPageUseCase = (
+  httpPageDataAccess: HttpPageDataAccessInterface
+): ParseMangaPageUseCaseInterface =>
+  new ParseMangaPageUseCase(httpPageDataAccess);

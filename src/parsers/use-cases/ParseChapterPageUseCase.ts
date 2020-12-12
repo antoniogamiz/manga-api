@@ -4,19 +4,19 @@ import { cheerio } from "../../deps.ts";
 import { ChapterEntity } from "../entities/index.ts";
 import { ParseChapterPageUseCaseInterface } from "../interfaces/use-cases/index.ts";
 import { ParsingResult } from "../utils/index.ts";
-import { HttpPageDataAccess } from "../repositories/index.ts";
+import { HttpPageDataAccessInterface } from "../interfaces/repositories/index.ts";
 import { ParsingError } from "../errors/index.ts";
-import { Injectable } from "https://deno.land/x/inject@v0.1.1/decorators.ts";
 
-@Injectable({ isSingleton: false })
 export class ParseChapterPageUseCase
   implements ParseChapterPageUseCaseInterface {
   parsingResult: ParsingResult<ChapterEntity>;
 
-  constructor(public readonly httpPageDataAccess: HttpPageDataAccess) {}
+  constructor(
+    public readonly httpPageDataAccess: HttpPageDataAccessInterface
+  ) {}
 
   async run(url: string) {
-    const html = await this.httpPageDataAccess.get(url);
+    const html = await this.httpPageDataAccess.get(url, 3);
     const $ = cheerio.load(html);
     const chapters = $(".container-chapter-reader")
       .contents()
@@ -36,3 +36,8 @@ export class ParseChapterPageUseCase
     return this.parsingResult;
   }
 }
+
+export const makeParseChapterPageUseCase = (
+  httpPageDataAccess: HttpPageDataAccessInterface
+): ParseChapterPageUseCaseInterface =>
+  new ParseChapterPageUseCase(httpPageDataAccess);
