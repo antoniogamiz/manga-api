@@ -25,9 +25,12 @@ export class ParseMangaListPageUseCase
       }))
       .get();
 
-    this.parsingResult = { result: entries };
-    if (!entries)
-      this.parsingResult.error = new ParsingError(`MangaList (${url})`);
+    if (!entries) {
+      this.parsingResult = new ParsingError(`MangaList (${url})`);
+      return;
+    }
+
+    this.parsingResult = entries;
   }
 
   getResults(): ParsingResult<MangaListEntryEntity> {

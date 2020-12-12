@@ -10,7 +10,7 @@ import {
   stringToStatus,
 } from "../enums/index.ts";
 import { HttpPageDataAccessInterface } from "../interfaces/repositories/index.ts";
-import { ParsingResult } from "../utils/index.ts";
+import { ParsingResult, isParsingError } from "../utils/index.ts";
 import { ParsingError } from "../errors/index.ts";
 
 enum ROW_HEADERS {
@@ -32,29 +32,34 @@ export class ParseMangaPageUseCase implements ParseMangaPageUseCaseInterface {
     this.html = await this.httpPageDataAccess.get(url, 3);
 
     const title = this.parseTitle();
-    const alternativeTitles = this.parseAlternativeTitles();
-    const status = this.parseStatus();
-    const genres = this.parseGenres();
-    const chaptersEntries = this.parseChapters();
+    let error;
+    if (isParsingError(title)) error = title;
 
-    const firstErrorInParsing =
-      title.error ||
-      alternativeTitles.error ||
-      status.error ||
-      genres.error ||
-      chaptersEntries.error;
+    const alternativeTitles = this.parseAlternativeTitles();
+    if (isParsingError(alternativeTitles)) error = alternativeTitles;
+
+    const status = this.parseStatus();
+    if (isParsingError(status)) error = status;
+
+    const genres = this.parseGenres();
+    if (isParsingError(genres)) error = genres;
+
+    const chapterEntries = this.parseChapters();
+    if (isParsingError(chapterEntries)) error = chapterEntries;
+
+    if (error) {
+      this.parsingResult = error;
+      return;
+    }
 
     this.parsingResult = {
-      error: firstErrorInParsing,
-      result: {
-        title: title.result,
-        alternativeTitles: alternativeTitles.result,
-        status: status.result,
-        genres: genres.result,
-        chapters: [],
-        chapterEntries: chaptersEntries.result,
-      },
-    };
+      title,
+      alternativeTitles,
+      status,
+      genres,
+      chapters: [],
+      chapterEntries,
+    } as MangaEntity;
   }
 
   getResults() {
@@ -65,19 +70,19 @@ export class ParseMangaPageUseCase implements ParseMangaPageUseCaseInterface {
     const $ = cheerio.load(this.html);
     const title = $("h1").text();
 
-    const parsingResult: ParsingResult<string> = { result: title };
+    let parsingResult: ParsingResult<string> = title;
     if (!title) {
-      parsingResult.error = new ParsingError("Title");
+      parsingResult = new ParsingError("Title");
     }
+
     return parsingResult;
   }
 
   parseAlternativeTitles(): ParsingResult<string[]> {
     const $ = cheerio.load(this.html);
-    const parsingResult: ParsingResult<string[]> = { result: [] };
-
     const rowIndex = this.findCorrectIndex(ROW_HEADERS.alternativeTitles);
-    if (rowIndex === -1) return parsingResult;
+
+    if (rowIndex === -1) return [];
 
     const alternativeTitles = $(
       `.variations-tableInfo tbody tr:nth-child(${rowIndex}) td:nth-child(2) h2`
@@ -87,9 +92,9 @@ export class ParseMangaPageUseCase implements ParseMangaPageUseCaseInterface {
       .filter(Boolean)
       .map((e: string) => e.trim());
 
-    parsingResult.result = alternativeTitles;
+    let parsingResult: ParsingResult<string[]> = alternativeTitles;
     if (!alternativeTitles)
-      parsingResult.error = new ParsingError("Alternitve Titles");
+      parsingResult = new ParsingError("Alternitve Titles");
 
     return parsingResult;
   }
@@ -102,9 +107,9 @@ export class ParseMangaPageUseCase implements ParseMangaPageUseCaseInterface {
     ).text();
     const status = stringToStatus(statusText);
 
-    const parsingResult: ParsingResult<Status> = { result: status };
+    let parsingResult: ParsingResult<Status> = status;
     if (!status) {
-      parsingResult.error = new ParsingError("Status");
+      parsingResult = new ParsingError("Status");
     }
 
     return parsingResult;
@@ -120,9 +125,9 @@ export class ParseMangaPageUseCase implements ParseMangaPageUseCaseInterface {
       .get()
       .map((g: string) => stringToGenre(g));
 
-    const parsingResult: ParsingResult<Genre[]> = { result: genres };
+    let parsingResult: ParsingResult<Genre[]> = genres;
     if (!genres) {
-      parsingResult.error = new ParsingError("Genres");
+      parsingResult = new ParsingError("Genres");
     }
 
     return parsingResult;
@@ -134,11 +139,9 @@ export class ParseMangaPageUseCase implements ParseMangaPageUseCaseInterface {
       .map((i: number, e: CheerioElement) => ({ url: $(e).attr("href") }))
       .get();
 
-    const parsingResult: ParsingResult<ChapterEntryEntity[]> = {
-      result: chapters,
-    };
+    let parsingResult: ParsingResult<ChapterEntryEntity[]> = chapters;
     if (!chapters) {
-      parsingResult.error = new ParsingError("Chapters");
+      parsingResult = new ParsingError("Chapters");
     }
 
     return parsingResult;

@@ -10,7 +10,7 @@ Deno.test("Should return a list of manga entries", async () => {
   );
 
   await parseMangaListPageUseCase.run(url);
-  const { result } = parseMangaListPageUseCase.getResults();
+  const result = parseMangaListPageUseCase.getResults();
 
   assertEquals(result, entries);
 });

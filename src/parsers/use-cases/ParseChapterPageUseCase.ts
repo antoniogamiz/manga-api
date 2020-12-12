@@ -27,9 +27,12 @@ export class ParseChapterPageUseCase
       chapterPages: chapters.map((url: string) => ({ url: url })),
     };
 
-    this.parsingResult = { result: chapter };
-    if (!chapter.title || !chapter.chapterPages)
-      this.parsingResult.error = new ParsingError(`Chapter (${url})`);
+    if (!chapter.title || !chapter.chapterPages) {
+      this.parsingResult = new ParsingError(`Chapter (${url})`);
+      return;
+    }
+
+    this.parsingResult = chapter;
   }
 
   getResults(): ParsingResult<ChapterEntity> {

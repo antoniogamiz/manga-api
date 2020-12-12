@@ -23,28 +23,23 @@ Deno.test("Should return a bad request error", async () => {
   assertEquals(response.statusCode, 400);
 });
 
-const mockManga = {
-  title: "MockManga",
-  alternativeTitles: [],
-  status: Status.COMPLETED,
-  genres: [],
-  chapters: [],
-  chapterEntries: [],
-};
-
 const mockParseChapterPageUseCase = () => {
   return {
     run: () => {},
-    getResults: () => ({ result: mockManga }),
+    getResults: () => ({
+      title: "MockManga",
+      alternativeTitles: [],
+      status: Status.COMPLETED,
+      genres: [],
+      chapters: [],
+      chapterEntries: [],
+    }),
   };
 };
 
 const mockParseChapterPageUseCaseWithError = () => {
   return {
     run: () => {},
-    getResults: () => ({
-      result: mockManga,
-      error: new ParsingError("Title"),
-    }),
+    getResults: () => new ParsingError("Title"),
   };
 };
