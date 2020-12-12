@@ -1,6 +1,8 @@
-import { ServerRequest } from "../src/deps.ts";
+import { ServerRequest } from "https://deno.land/std@0.73.0/http/server.ts";
 
-import app from "../src/app.ts";
+import { createApp } from "../src/infraestructure/api/index.ts";
+
+const app = createApp();
 
 export default async (req: ServerRequest) => {
   req.url = req.url.replace("/api", "");

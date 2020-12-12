@@ -65,32 +65,7 @@ También puedes ver cómo y por qué publicamos en dos registros distintos [aqu�
 ## Documentación
 
 - [GH Pages](https://antoniogamiz.github.io/manga-api/)
-- Lenguaje: [Typescript](https://www.typescriptlang.org/)
-- Runtime: [Deno](https://deno.land/)
-- [Plan de desarrollo](/docs/plan.md)
-- [iv.yaml](/iv.yaml)
-- Principales tipos:
-    - [Relacionados con manga](/src/types/manga.ts)
-    - [Relacionados con parsers](/src/types/parser.ts)
 - [Diferentes endpoints](/docs/endpoints.md)
-- [Integración continua](/docs/ci.md)
-
-La documentación sigue el estándar [tsdoc](https://github.com/microsoft/tsdoc) y es generada usando [typedoc](https://github.com/TypeStrong/typedoc).
-
-### Historias de usuario:
-
-Los cambios aparecen descritos en el [CHANGELOG](docs/CHANGELOG.md) del proyecto.
-
-- [x] [HU1: Consultar mangas disponibles](https://github.com/antoniogamiz/manga-api/issues/9)
-- [x] [HU2: Consultar manga específico](https://github.com/antoniogamiz/manga-api/issues/10)
-- [ ] [HU3: consultar manga por criterios](https://github.com/antoniogamiz/manga-api/issues/11)
-- [x] [HU4: consultar capítulo de un manga](https://github.com/antoniogamiz/manga-api/issues/12)
-
-
-### Enlaces de interés
-
- - [Justificación](/docs/herramientas.md) de las herramientas usadas.
- - [Comprobación](/docs/git.md) de `git` configurado correctamente.
 
 ## Autor
 
