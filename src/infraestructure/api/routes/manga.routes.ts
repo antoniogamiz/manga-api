@@ -30,6 +30,8 @@ export const getManga = async ({
   const { errorMessage, statusCode, ...body } = res;
 
   response.body = errorMessage ? { errorMessage, statusCode } : body;
+  response.status = statusCode;
+
   return;
 };
 
@@ -50,6 +52,8 @@ export const getChapter = async ({
   const { errorMessage, statusCode, ...body } = res;
 
   response.body = errorMessage ? { errorMessage, statusCode } : body;
+  response.status = statusCode;
+
   return;
 };
 
@@ -61,14 +65,15 @@ export const getMangaBy = async (ctx: Context) => {
   if (genreParameter) genre = stringToGenre(genreParameter);
   if (statusParameter) status = stringToStatus(statusParameter);
 
-  const getMangaPageController = ObjectFactory.getInstance<GetMangaByControllerInterface>(
+  const getMangaByPageController = ObjectFactory.getInstance<GetMangaByControllerInterface>(
     "GetMangaByControllerInterface"
   );
 
-  const request = new MangaByRequest();
-  const res = await getMangaPageController.run(request);
+  const request = new MangaByRequest(genre, status);
+  const res = await getMangaByPageController.run(request);
   const { errorMessage, statusCode, ...body } = res;
 
   response.body = errorMessage ? { errorMessage, statusCode } : body;
+  response.status = statusCode;
   return;
 };

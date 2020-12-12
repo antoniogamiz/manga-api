@@ -1,6 +1,6 @@
 import { Genre } from "../enums/index.ts";
 
-export const genreIndexes = new Map<number, number>([
+export const genreIndexes = new Map<string, number>([
   [Genre.ACTION, 2],
   [Genre.ADULT, 3],
   [Genre.ADVENTURE, 4],

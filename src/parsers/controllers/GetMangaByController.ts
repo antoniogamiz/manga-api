@@ -11,6 +11,7 @@ import { GetMangaByControllerInterface } from "../interfaces/controllers/index.t
 import { ParseMangaListPageUseCaseInterface } from "../interfaces/use-cases/index.ts";
 import { isParsingError, ParsingResult } from "../utils/index.ts";
 import { MANGA_URL } from "../../Settings.ts";
+import { isError } from "../utils/isError.ts";
 
 export class GetMangaByController implements GetMangaByControllerInterface {
   parseMangaListPageUseCase: ParseMangaListPageUseCaseInterface;
@@ -23,6 +24,21 @@ export class GetMangaByController implements GetMangaByControllerInterface {
 
   async run(request: MangaByRequest): Promise<MangaByResponse> {
     const { genre, status } = request;
+
+    if (genre === Genre.INVALID_GENRE) {
+      return {
+        errorMessage: `Bad Genre: ${genre} `,
+        statusCode: 400,
+      };
+    }
+
+    if (status === Status.INVALID_STATUS) {
+      return {
+        errorMessage: `Bad Status: ${status}`,
+        statusCode: 400,
+      };
+    }
+
     const url = this.buildURL(genre, status);
     await this.parseMangaListPageUseCase.run(url);
     const mangaListEntryEntity = this.parseMangaListPageUseCase.getResults() as ParsingResult<
@@ -44,7 +60,7 @@ export class GetMangaByController implements GetMangaByControllerInterface {
 
   buildURL(genre?: Genre, status?: Status): string {
     let uri;
-    const genreIndex = genreIndexes.get(genre as number);
+    const genreIndex = genreIndexes.get((genre as unknown) as string);
     const statusString = status === Status.COMPLETED ? "completed" : "ongoing";
 
     if (status && genre)
