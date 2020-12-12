@@ -3,5 +3,5 @@ import { ParsingResult } from "../../utils/index.ts";
 
 export interface ParseMangaListPageUseCaseInterface {
   run(url: string): void;
-  getResults(): ParsingResult<MangaListEntryEntity>;
+  getResults(): ParsingResult<MangaListEntryEntity[]>;
 }

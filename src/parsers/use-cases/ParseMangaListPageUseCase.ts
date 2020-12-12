@@ -9,7 +9,7 @@ import { HttpPageDataAccessInterface } from "../interfaces/repositories/index.ts
 
 export class ParseMangaListPageUseCase
   implements ParseMangaListPageUseCaseInterface {
-  parsingResult: ParsingResult<MangaListEntryEntity>;
+  parsingResult: ParsingResult<MangaListEntryEntity[]>;
 
   constructor(
     public readonly httpPageDataAccess: HttpPageDataAccessInterface
@@ -33,7 +33,7 @@ export class ParseMangaListPageUseCase
     this.parsingResult = entries;
   }
 
-  getResults(): ParsingResult<MangaListEntryEntity> {
+  getResults(): ParsingResult<MangaListEntryEntity[]> {
     return this.parsingResult;
   }
 }
