@@ -1,4 +1,4 @@
-import { Status, Context } from "../deps.ts";
+import { Status, Context } from "../../../deps.ts";
 
 const errorMiddleware = async (ctx: Context, next: () => Promise<void>) => {
   try {
