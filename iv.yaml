@@ -1,8 +1,6 @@
 lenguaje: Deno
-test: tests/parser/manganelo.test.ts
+test: tests/parsers/use-cases/ParseMangaListPageUseCase.test.ts
 taskfile: scripts.yaml
 entidad:
-  - src/parsers/manganelo.ts
-  - src/types/manga.ts
-  - src/types/parser.ts
-URL: https://manga-api-zeta.vercel.app/api/mangas/xtbw261401566264968/chapter_163
+  - src/parsers/entities/MangaEntity.ts
+URL: https://manga-api-zeta.vercel.app/api/manga/xtbw261401566264968/chapter_163
