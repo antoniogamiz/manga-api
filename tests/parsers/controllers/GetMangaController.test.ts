@@ -4,21 +4,21 @@ import { Status } from "../../../src/parsers/enums/index.ts";
 import { ParsingError } from "../../../src/parsers/errors/index.ts";
 
 Deno.test("Should return a MangaResponse", async () => {
-  const parseChapterPageUseCase = makeGetMangaController(
+  const parseMangaPageUseCase = makeGetMangaController(
     mockParseChapterPageUseCase()
   );
 
-  const response = await parseChapterPageUseCase.run({ mangaId: "mocked" });
+  const response = await parseMangaPageUseCase.run({ mangaId: "mocked" });
 
   assertEquals(response.title, "MockManga");
 });
 
 Deno.test("Should return a bad request error", async () => {
-  const parseChapterPageUseCase = makeGetMangaController(
-    mockParseChapterPageUseCaseWithError()
+  const parseMangaPageUseCase = makeGetMangaController(
+    mockMangaChapterPageUseCaseWithError()
   );
 
-  const response = await parseChapterPageUseCase.run({ mangaId: "mocked" });
+  const response = await parseMangaPageUseCase.run({ mangaId: "mocked" });
 
   assertEquals(response.statusCode, 400);
 });
@@ -37,7 +37,7 @@ const mockParseChapterPageUseCase = () => {
   };
 };
 
-const mockParseChapterPageUseCaseWithError = () => {
+const mockMangaChapterPageUseCaseWithError = () => {
   return {
     run: () => {},
     getResults: () => new ParsingError("Title"),

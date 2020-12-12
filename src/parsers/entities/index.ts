@@ -7,3 +7,5 @@ export * from "./MangaListEntry.ts";
 export * from "./ChapterEntity.ts";
 export * from "./ChapterEntryEntity.ts";
 export * from "./ChapterPageEntity.ts";
+export * from "./ChapterRequest.ts";
+export * from "./ChapterResponse.ts";
