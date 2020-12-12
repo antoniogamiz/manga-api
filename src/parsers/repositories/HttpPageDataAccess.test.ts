@@ -1,6 +1,6 @@
-import { HttpPageDataAccess } from "../../../src/parsers/repositories/index.ts";
+import { assert, assertThrowsAsync } from "../../deps.ts";
 
-import { assert, assertThrowsAsync } from "../../../src/deps.ts";
+import { HttpPageDataAccess } from "./index.ts";
 
 Deno.test("Basic fetch try", async () => {
   const httpPageDataAccess = new HttpPageDataAccess();

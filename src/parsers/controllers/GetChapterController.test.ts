@@ -1,8 +1,8 @@
-import { ObjectFactory } from "../../../src/modules/common/factories/ObjectFactory.ts";
+import { ObjectFactory } from "../../modules/common/factories/ObjectFactory.ts";
+import { assertEquals } from "../../deps.ts";
 
-import { assertEquals } from "../../../src/deps.ts";
-import { ParsingError } from "../../../src/parsers/errors/index.ts";
-import { GetChapterController } from "../../../src/parsers/controllers/index.ts";
+import { ParsingError } from "../errors/index.ts";
+import { GetChapterController } from "./index.ts";
 
 Deno.test("Should return a ChapterResponse", async () => {
   mockParseChapterPageUseCase();

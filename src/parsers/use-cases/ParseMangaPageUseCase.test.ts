@@ -1,5 +1,6 @@
-import { assertEquals } from "../../../src/deps.ts";
-import { ParseMangaPageUseCase } from "../../../src/parsers/use-cases/index.ts";
+import { assertEquals } from "../../deps.ts";
+
+import { ParseMangaPageUseCase } from "./index.ts";
 import { expected } from "./json/ParseMangaPageUseCase.ts";
 
 Deno.test("Should return the title of a manga", async () => {

@@ -1,7 +1,8 @@
-import { assertEquals } from "../../../src/deps.ts";
-import { ParseChapterPageUseCase } from "../../../src/parsers/use-cases/index.ts";
+import { assertEquals } from "../../deps.ts";
+
+import { ParseChapterPageUseCase } from "./index.ts";
 import { expected } from "./json/ParseChapterPageUseCase.ts";
-import { ChapterEntity } from "../../../src/parsers/entities/index.ts";
+import { ChapterEntity } from "../entities/index.ts";
 
 Deno.test("Should return the title of the manga", async () => {
   const { url, title } = expected;

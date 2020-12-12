@@ -1,9 +1,9 @@
-import { ObjectFactory } from "../../../src/modules/common/factories/ObjectFactory.ts";
+import { ObjectFactory } from "../../modules/common/factories/ObjectFactory.ts";
+import { assertEquals } from "../../deps.ts";
 
-import { assertEquals } from "../../../src/deps.ts";
-import { Status, Genre } from "../../../src/parsers/enums/index.ts";
-import { ParsingError } from "../../../src/parsers/errors/index.ts";
-import { GetMangaByController } from "../../../src/parsers/controllers/index.ts";
+import { Status, Genre } from "../enums/index.ts";
+import { ParsingError } from "../errors/index.ts";
+import { GetMangaByController } from "./index.ts";
 
 Deno.test("Should return a MangaByResponse", async () => {
   mockParseMangaListPageUseCase();
