@@ -32,12 +32,12 @@ export const expected = {
       url: "https://manganelo.com/manga/read_naruto_manga_online_free3",
     },
     {
-      title: "Baki",
-      url: "https://manganelo.com/manga/baki",
-    },
-    {
       title: "Gosu",
       url: "https://manganelo.com/manga/gosu",
+    },
+    {
+      title: "Baki",
+      url: "https://manganelo.com/manga/baki",
     },
     {
       title: "Fairy Tail",
