@@ -35,6 +35,7 @@ export class ParseMangaPageUseCase implements ParseMangaPageUseCaseInterface {
   async run(url: string) {
     const httpPageEntity = await this.httpPageDataAccess.get(url, 3);
     this.html = httpPageEntity.html;
+
     if (httpPageEntity.html.includes("NOT FOUND")) {
       this.parsingResult = new ParsingError("Not found");
       return;

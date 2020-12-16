@@ -22,6 +22,11 @@ export class ParseChapterPageUseCase
   async run(url: string) {
     const { html } = await this.httpPageDataAccess.get(url, 3);
 
+    if (html.includes("NOT FOUND")) {
+      this.parsingResult = new ParsingError("Not found");
+      return;
+    }
+
     const $ = cheerio.load(html);
     const chapters = $(".container-chapter-reader")
       .contents()

@@ -38,7 +38,7 @@ Parámetros:
 Devuelve:
 
 - `OK`: [ChapterEntity](https://github.com/antoniogamiz/manga-api/blob/master/src/parsers/entities/ChapterEntity.ts)
-- `NOT_FOUND`: si alguno de los indentificadores es incorrecto.
+- `BAD_REQUEST`: si alguno de los indentificadores es incorrecto.
 
 Historia de usuario: [H4](https://github.com/antoniogamiz/manga-api/issues/12)
 
