@@ -8,7 +8,7 @@ import {
 import { GetChapterControllerInterface } from "../interfaces/controllers/index.ts";
 import { ParseChapterPageUseCaseInterface } from "../interfaces/use-cases/index.ts";
 import { isParsingError, ParsingResult } from "../utils/index.ts";
-import { MANGA_URL } from "../../Settings.ts";
+import Settings from "../../Settings.ts";
 
 export class GetChapterController implements GetChapterControllerInterface {
   parseChapterPageUseCase: ParseChapterPageUseCaseInterface;
@@ -20,7 +20,7 @@ export class GetChapterController implements GetChapterControllerInterface {
 
   async run(request: ChapterRequest): Promise<ChapterResponse> {
     const { mangaId, chapterId } = request;
-    const url = `${MANGA_URL}chapter/${mangaId}/${chapterId}`;
+    const url = `${Settings.MANGA_URL}chapter/${mangaId}/${chapterId}`;
     await this.parseChapterPageUseCase.run(url);
     const chapterEntity = this.parseChapterPageUseCase.getResults() as ParsingResult<ChapterEntity>;
 

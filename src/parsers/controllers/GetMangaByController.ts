@@ -10,7 +10,7 @@ import { genreIndexes } from "../utils/GenreURL.ts";
 import { GetMangaByControllerInterface } from "../interfaces/controllers/index.ts";
 import { ParseMangaListPageUseCaseInterface } from "../interfaces/use-cases/index.ts";
 import { isParsingError, ParsingResult } from "../utils/index.ts";
-import { MANGA_URL } from "../../Settings.ts";
+import Settings from "../../Settings.ts";
 import { isError } from "../utils/isError.ts";
 
 export class GetMangaByController implements GetMangaByControllerInterface {
@@ -71,6 +71,6 @@ export class GetMangaByController implements GetMangaByControllerInterface {
       uri = `advanced_search?s=all&g_i=_${genreIndex}_&page=1`;
     if (!status && !genre) uri = "genre-all";
 
-    return `${MANGA_URL}${uri}`;
+    return `${Settings.MANGA_URL}${uri}`;
   }
 }

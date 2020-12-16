@@ -6,6 +6,7 @@ export const createApp = (): Application<Context> => {
   const app = new Application<Context>();
 
   app.use(middleware.errorMiddleware);
+  app.use(middleware.loggerMidleware);
   app.use(router.routes());
   app.use(router.allowedMethods());
 

@@ -1,6 +1,7 @@
 allow:
   - net
   - env
+  - run
 
 scripts:
   start:

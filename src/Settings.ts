@@ -1,13 +1,19 @@
 const env = Deno.env.toObject();
 
 export const isEtcdAvailable = async () => {
-  const cmd = Deno.run({
-    cmd: ["etcdctl"],
-    stderr: "piped",
-  });
+  let errorStr;
+  try {
+    const cmd = Deno.run({
+      cmd: ["etcdctl"],
+      stdout: "piped",
+      stderr: "piped",
+    });
+    const error = await cmd.stderrOutput();
+    errorStr = new TextDecoder().decode(error);
+    cmd.close();
+    // deno-lint-ignore no-empty
+  } catch {}
 
-  const error = await cmd.stderrOutput();
-  const errorStr = new TextDecoder().decode(error);
   return errorStr;
 };
 
@@ -19,6 +25,8 @@ export const getConfigFromLocalEtcdInstance = async (): Promise<Settings> => {
 
   const output = await cmd.output();
   const outStr = new TextDecoder().decode(output);
+  cmd.close();
+
   const variables = outStr.split("\n");
   const config: { [key: string]: string } = {};
   for (let i = 0; i < outStr.length / 2; i++) {

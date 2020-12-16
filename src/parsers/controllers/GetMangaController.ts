@@ -3,7 +3,7 @@ import { ObjectFactory } from "../../modules/common/factories/ObjectFactory.ts";
 import { MangaEntity, MangaRequest, MangaResponse } from "../entities/index.ts";
 import { GetMangaControllerInterface } from "../interfaces/controllers/index.ts";
 import { ParseMangaPageUseCaseInterface } from "../interfaces/use-cases/index.ts";
-import { MANGA_URL } from "../../Settings.ts";
+import Settings from "../../Settings.ts";
 import { isParsingError, ParsingResult } from "../utils/index.ts";
 
 export class GetMangaController implements GetMangaControllerInterface {
@@ -17,7 +17,7 @@ export class GetMangaController implements GetMangaControllerInterface {
 
   async run(request: MangaRequest): Promise<MangaResponse> {
     const { mangaId } = request;
-    const url = `${MANGA_URL}manga/${mangaId}`;
+    const url = `${Settings.MANGA_URL}manga/${mangaId}`;
     await this.parseMangaPageUseCase.run(url);
     const mangaEntity = this.parseMangaPageUseCase.getResults() as ParsingResult<MangaEntity>;
 
