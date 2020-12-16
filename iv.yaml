@@ -1,5 +1,5 @@
 lenguaje: Deno
-test: tests/parsers/use-cases/ParseMangaListPageUseCase.test.ts
+test: src/parsers/use-cases/ParseMangaListPageUseCase.test.ts
 taskfile: scripts.yaml
 entidad:
   - src/parsers/entities/MangaEntity.ts
