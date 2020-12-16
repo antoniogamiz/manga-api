@@ -20,7 +20,7 @@ export class ParseMangaListPageUseCase
   }
 
   async run(url: string) {
-    const html = await this.httpPageDataAccess.get(url, 3);
+    const { html } = await this.httpPageDataAccess.get(url, 3);
     const $ = cheerio.load(html);
     const entries = $(".panel-content-genres .content-genres-item > a")
       .map((i: number, e: cheerio) => ({

@@ -20,7 +20,8 @@ export class ParseChapterPageUseCase
   }
 
   async run(url: string) {
-    const html = await this.httpPageDataAccess.get(url, 3);
+    const { html } = await this.httpPageDataAccess.get(url, 3);
+
     const $ = cheerio.load(html);
     const chapters = $(".container-chapter-reader")
       .contents()

@@ -11,3 +11,5 @@ export * from "./ChapterResponse.ts";
 export * from "./MangaListEntry.ts";
 export * from "./MangaByRequest.ts";
 export * from "./MangaByResponse.ts";
+
+export * from "./HttpPageEntity.ts";
