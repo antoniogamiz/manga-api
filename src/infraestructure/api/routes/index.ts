@@ -1,9 +1,10 @@
 import { Router } from "../../../deps.ts";
 import * as mangaRoutes from "./manga.routes.ts";
 import * as healthRoutes from "./health.routes.ts";
-import { API_ROOT } from "../../../Settings.ts";
+import Settings from "../../../Settings.ts";
 
 const router: Router = new Router();
+const { API_ROOT } = Settings;
 
 router.get(`${API_ROOT}/manga`, mangaRoutes.getMangaBy);
 router.get(`${API_ROOT}/manga/:mangaId`, mangaRoutes.getManga);
