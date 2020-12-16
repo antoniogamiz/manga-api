@@ -4,3 +4,4 @@ taskfile: scripts.yaml
 entidad:
   - src/parsers/entities/MangaEntity.ts
 URL: https://manga-api-zeta.vercel.app/api/manga/xtbw261401566264968/chapter_163
+make: vr

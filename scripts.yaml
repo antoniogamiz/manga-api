@@ -21,3 +21,9 @@ scripts:
     desc: Linter
     cmd: deno lint --unstable
     tsconfig: tsconfig.json
+  build:
+    desc: Build the app
+    cmd: echo 'Nothing to be done.'
+  install:
+    desc: Install the app
+    cmd: echo 'Nothing to be done.'

@@ -35,6 +35,12 @@ git clone https://github.com/antoniogamiz/manga-api
 
 Nota: necesitas tener instalado [velociraptor](https://github.com/umbopepato/velociraptor).
 
+## Rúbricas práctica 6
+
+- [Justificación framework](docs/framework.md)
+- [Diseño del API](docs/endpoints.md)
+- [Configuración distribuida](docs/etcd.md)
+
 ## Serverless API
 
 La API también se encuentra desplegada en Vercel, usando funciones serverless. Puede consultar más información [aquí](docs/serverless.md).
