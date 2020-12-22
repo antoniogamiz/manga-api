@@ -1,0 +1,841 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ManganeloParser | manga-api</title>
+	<meta name="description" content="Documentation for manga-api">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">manga-api</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="manganeloparser.html">ManganeloParser</a>
+				</li>
+			</ul>
+			<h1>Class ManganeloParser</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">ManganeloParser</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><span class="tsd-signature-type">any</span></li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="manganeloparser.html#row_headers" class="tsd-kind-icon">ROW_<wbr>HEADERS</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="manganeloparser.html#findcorrectindex" class="tsd-kind-icon">find<wbr>Correct<wbr>Index</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="manganeloparser.html#parse" class="tsd-kind-icon">parse</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="manganeloparser.html#parsealternativetitles" class="tsd-kind-icon">parse<wbr>Alternative<wbr>Titles</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="manganeloparser.html#parsechapter" class="tsd-kind-icon">parse<wbr>Chapter</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="manganeloparser.html#parsechapters" class="tsd-kind-icon">parse<wbr>Chapters</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="manganeloparser.html#parsegenres" class="tsd-kind-icon">parse<wbr>Genres</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="manganeloparser.html#parsemangalist" class="tsd-kind-icon">parse<wbr>Manga<wbr>List</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="manganeloparser.html#parsestatus" class="tsd-kind-icon">parse<wbr>Status</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="manganeloparser.html#parsetitle" class="tsd-kind-icon">parse<wbr>Title</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal tsd-parent-kind-class"><a href="manganeloparser.html#genreurls" class="tsd-kind-icon">genreURLs</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="row_headers" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> ROW_<wbr>HEADERS</h3>
+					<div class="tsd-signature tsd-kind-icon">ROW_<wbr>HEADERS<span class="tsd-signature-symbol">:</span> <a href="../enums/row_headers.html" class="tsd-signature-type">ROW_HEADERS</a><span class="tsd-signature-symbol"> = ROW_HEADERS</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L29">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:29</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="findcorrectindex" class="tsd-anchor"></a>
+					<h3>find<wbr>Correct<wbr>Index</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">find<wbr>Correct<wbr>Index<span class="tsd-signature-symbol">(</span>header<span class="tsd-signature-symbol">: </span><a href="manganeloparser.html#row_headers" class="tsd-signature-type">ROW_HEADERS</a>, html<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L143">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:143</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>header: <a href="manganeloparser.html#row_headers" class="tsd-signature-type">ROW_HEADERS</a></h5>
+								</li>
+								<li>
+									<h5>html: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="parse" class="tsd-anchor"></a>
+					<h3>parse</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">parse<span class="tsd-signature-symbol">(</span>html<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#parsingresult" class="tsd-signature-type">ParsingResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Manga</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L31">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:31</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>html: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#parsingresult" class="tsd-signature-type">ParsingResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Manga</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="parsealternativetitles" class="tsd-anchor"></a>
+					<h3>parse<wbr>Alternative<wbr>Titles</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Alternative<wbr>Titles<span class="tsd-signature-symbol">(</span>html<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#parsingresult" class="tsd-signature-type">ParsingResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L65">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:65</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>html: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#parsingresult" class="tsd-signature-type">ParsingResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="parsechapter" class="tsd-anchor"></a>
+					<h3>parse<wbr>Chapter</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Chapter<span class="tsd-signature-symbol">(</span>html<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#parsingresult" class="tsd-signature-type">ParsingResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Chapter</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L114">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:114</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>html: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#parsingresult" class="tsd-signature-type">ParsingResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Chapter</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="parsechapters" class="tsd-anchor"></a>
+					<h3>parse<wbr>Chapters</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Chapters<span class="tsd-signature-symbol">(</span>html<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#parsingresult" class="tsd-signature-type">ParsingResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ChapterEntry</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L105">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:105</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>html: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#parsingresult" class="tsd-signature-type">ParsingResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ChapterEntry</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="parsegenres" class="tsd-anchor"></a>
+					<h3>parse<wbr>Genres</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Genres<span class="tsd-signature-symbol">(</span>html<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#parsingresult" class="tsd-signature-type">ParsingResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../enums/genre.html" class="tsd-signature-type">Genre</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L92">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:92</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>html: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#parsingresult" class="tsd-signature-type">ParsingResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../enums/genre.html" class="tsd-signature-type">Genre</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="parsemangalist" class="tsd-anchor"></a>
+					<h3>parse<wbr>Manga<wbr>List</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Manga<wbr>List<span class="tsd-signature-symbol">(</span>html<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#parsingresult" class="tsd-signature-type">ParsingResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">MangaListEntry</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L132">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:132</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>html: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#parsingresult" class="tsd-signature-type">ParsingResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">MangaListEntry</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="parsestatus" class="tsd-anchor"></a>
+					<h3>parse<wbr>Status</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Status<span class="tsd-signature-symbol">(</span>html<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#parsingresult" class="tsd-signature-type">ParsingResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../enums/status.html" class="tsd-signature-type">Status</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L81">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:81</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>html: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#parsingresult" class="tsd-signature-type">ParsingResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../enums/status.html" class="tsd-signature-type">Status</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="parsetitle" class="tsd-anchor"></a>
+					<h3>parse<wbr>Title</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Title<span class="tsd-signature-symbol">(</span>html<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#parsingresult" class="tsd-signature-type">ParsingResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L58">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:58</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>html: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#parsingresult" class="tsd-signature-type">ParsingResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-class">
+					<a name="genreurls" class="tsd-anchor"></a>
+					<h3>genreURLs</h3>
+					<div class="tsd-signature tsd-kind-icon">genreURLs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L154">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:154</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.action" class="tsd-anchor"></a>
+						<h3>Action</h3>
+						<div class="tsd-signature tsd-kind-icon">Action<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-2&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L155">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:155</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.adult" class="tsd-anchor"></a>
+						<h3>Adult</h3>
+						<div class="tsd-signature tsd-kind-icon">Adult<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-3&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L156">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:156</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.adventure" class="tsd-anchor"></a>
+						<h3>Adventure</h3>
+						<div class="tsd-signature tsd-kind-icon">Adventure<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-4&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L157">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:157</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.comedy" class="tsd-anchor"></a>
+						<h3>Comedy</h3>
+						<div class="tsd-signature tsd-kind-icon">Comedy<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-6&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L158">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:158</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.cooking" class="tsd-anchor"></a>
+						<h3>Cooking</h3>
+						<div class="tsd-signature tsd-kind-icon">Cooking<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-7&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L159">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:159</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.doujinshi" class="tsd-anchor"></a>
+						<h3>Doujinshi</h3>
+						<div class="tsd-signature tsd-kind-icon">Doujinshi<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-9&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L160">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:160</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.drama" class="tsd-anchor"></a>
+						<h3>Drama</h3>
+						<div class="tsd-signature tsd-kind-icon">Drama<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-10&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L161">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:161</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.ecchi" class="tsd-anchor"></a>
+						<h3>Ecchi</h3>
+						<div class="tsd-signature tsd-kind-icon">Ecchi<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-11&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L162">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:162</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.fantasy" class="tsd-anchor"></a>
+						<h3>Fantasy</h3>
+						<div class="tsd-signature tsd-kind-icon">Fantasy<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-12&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L163">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:163</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.gender_bender" class="tsd-anchor"></a>
+						<h3>Gender bender</h3>
+						<div class="tsd-signature tsd-kind-icon">Gender bender<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-13&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L164">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:164</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.harem" class="tsd-anchor"></a>
+						<h3>Harem</h3>
+						<div class="tsd-signature tsd-kind-icon">Harem<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-14&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L165">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:165</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.historical" class="tsd-anchor"></a>
+						<h3>Historical</h3>
+						<div class="tsd-signature tsd-kind-icon">Historical<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-15&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L166">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:166</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.horror" class="tsd-anchor"></a>
+						<h3>Horror</h3>
+						<div class="tsd-signature tsd-kind-icon">Horror<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-16&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L167">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:167</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.isekai" class="tsd-anchor"></a>
+						<h3>Isekai</h3>
+						<div class="tsd-signature tsd-kind-icon">Isekai<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-45&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L168">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:168</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.josei" class="tsd-anchor"></a>
+						<h3>Josei</h3>
+						<div class="tsd-signature tsd-kind-icon">Josei<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-17&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L169">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:169</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.manhua" class="tsd-anchor"></a>
+						<h3>Manhua</h3>
+						<div class="tsd-signature tsd-kind-icon">Manhua<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-44&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L170">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:170</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.manhwa" class="tsd-anchor"></a>
+						<h3>Manhwa</h3>
+						<div class="tsd-signature tsd-kind-icon">Manhwa<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-43&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L171">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:171</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.martial_arts" class="tsd-anchor"></a>
+						<h3>Martial arts</h3>
+						<div class="tsd-signature tsd-kind-icon">Martial arts<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-19&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L172">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:172</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.mature" class="tsd-anchor"></a>
+						<h3>Mature</h3>
+						<div class="tsd-signature tsd-kind-icon">Mature<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-20&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L173">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:173</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.mecha" class="tsd-anchor"></a>
+						<h3>Mecha</h3>
+						<div class="tsd-signature tsd-kind-icon">Mecha<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-21&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L174">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:174</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.medical" class="tsd-anchor"></a>
+						<h3>Medical</h3>
+						<div class="tsd-signature tsd-kind-icon">Medical<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-22&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L175">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:175</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.mystery" class="tsd-anchor"></a>
+						<h3>Mystery</h3>
+						<div class="tsd-signature tsd-kind-icon">Mystery<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-24&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L176">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:176</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.one_shot" class="tsd-anchor"></a>
+						<h3>One shot</h3>
+						<div class="tsd-signature tsd-kind-icon">One shot<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-25&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L177">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:177</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.psychological" class="tsd-anchor"></a>
+						<h3>Psychological</h3>
+						<div class="tsd-signature tsd-kind-icon">Psychological<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-26&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L178">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:178</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.romance" class="tsd-anchor"></a>
+						<h3>Romance</h3>
+						<div class="tsd-signature tsd-kind-icon">Romance<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-27&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L179">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:179</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.school_life" class="tsd-anchor"></a>
+						<h3>School life</h3>
+						<div class="tsd-signature tsd-kind-icon">School life<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-28&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L180">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:180</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.sci_fi" class="tsd-anchor"></a>
+						<h3>Sci fi</h3>
+						<div class="tsd-signature tsd-kind-icon">Sci fi<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-29&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L181">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:181</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.seinen" class="tsd-anchor"></a>
+						<h3>Seinen</h3>
+						<div class="tsd-signature tsd-kind-icon">Seinen<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-30&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L182">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:182</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.shoujo" class="tsd-anchor"></a>
+						<h3>Shoujo</h3>
+						<div class="tsd-signature tsd-kind-icon">Shoujo<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-31&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L183">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:183</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.shoujo_ai" class="tsd-anchor"></a>
+						<h3>Shoujo ai</h3>
+						<div class="tsd-signature tsd-kind-icon">Shoujo ai<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-32&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L184">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:184</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.shounen" class="tsd-anchor"></a>
+						<h3>Shounen</h3>
+						<div class="tsd-signature tsd-kind-icon">Shounen<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-33&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L185">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:185</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.shounen_ai" class="tsd-anchor"></a>
+						<h3>Shounen ai</h3>
+						<div class="tsd-signature tsd-kind-icon">Shounen ai<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-34&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L186">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:186</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.slice_of_life" class="tsd-anchor"></a>
+						<h3>Slice of life</h3>
+						<div class="tsd-signature tsd-kind-icon">Slice of life<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-35&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L187">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:187</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.smut" class="tsd-anchor"></a>
+						<h3>Smut</h3>
+						<div class="tsd-signature tsd-kind-icon">Smut<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-36&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L188">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:188</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.sports" class="tsd-anchor"></a>
+						<h3>Sports</h3>
+						<div class="tsd-signature tsd-kind-icon">Sports<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-37&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L189">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:189</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.supernatural" class="tsd-anchor"></a>
+						<h3>Supernatural</h3>
+						<div class="tsd-signature tsd-kind-icon">Supernatural<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-38&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L190">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:190</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.tragedy" class="tsd-anchor"></a>
+						<h3>Tragedy</h3>
+						<div class="tsd-signature tsd-kind-icon">Tragedy<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-39&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L191">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:191</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.webtoons" class="tsd-anchor"></a>
+						<h3>Webtoons</h3>
+						<div class="tsd-signature tsd-kind-icon">Webtoons<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-40&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L192">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:192</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.yaoi" class="tsd-anchor"></a>
+						<h3>Yaoi</h3>
+						<div class="tsd-signature tsd-kind-icon">Yaoi<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-41&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L193">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:193</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="genreurls.yuri" class="tsd-anchor"></a>
+						<h3>Yuri</h3>
+						<div class="tsd-signature tsd-kind-icon">Yuri<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;https://manganelo.com/genre-42&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/antoniogamiz/manga-api/blob/195b716/src/parsers/manganelo.ts#L194">home/runner/work/manga-api/manga-api/src/parsers/manganelo.ts:194</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="manganeloparser.html" class="tsd-kind-icon">Manganelo<wbr>Parser</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="manganeloparser.html#row_headers" class="tsd-kind-icon">ROW_<wbr>HEADERS</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="manganeloparser.html#findcorrectindex" class="tsd-kind-icon">find<wbr>Correct<wbr>Index</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="manganeloparser.html#parse" class="tsd-kind-icon">parse</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="manganeloparser.html#parsealternativetitles" class="tsd-kind-icon">parse<wbr>Alternative<wbr>Titles</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="manganeloparser.html#parsechapter" class="tsd-kind-icon">parse<wbr>Chapter</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="manganeloparser.html#parsechapters" class="tsd-kind-icon">parse<wbr>Chapters</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="manganeloparser.html#parsegenres" class="tsd-kind-icon">parse<wbr>Genres</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="manganeloparser.html#parsemangalist" class="tsd-kind-icon">parse<wbr>Manga<wbr>List</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="manganeloparser.html#parsestatus" class="tsd-kind-icon">parse<wbr>Status</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="manganeloparser.html#parsetitle" class="tsd-kind-icon">parse<wbr>Title</a>
+							</li>
+							<li class=" tsd-kind-object-literal tsd-parent-kind-class">
+								<a href="manganeloparser.html#genreurls" class="tsd-kind-icon">genreURLs</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
